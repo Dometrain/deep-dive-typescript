@@ -1,0 +1,23 @@
+{
+  "include": ["**/*.ts"],
+  "compilerOptions": {
+    "module": "NodeNext", // Recommended for modern Node.js projects
+    "target": "ES2024", // Override default (ES5) to use modern native JS features without transpiling
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "noEmit": true, // Don't emit any files, just type-check
+    "checkJs": true, // Type-check .js files
+    "allowJs": true, // Allow JavaScript files to be compiled
+    "strict": true, // Enable all strict type-checking options
+    "moduleResolution": "nodenext", // Specify how TypeScript looks up a file from a given module specifier
+    "moduleDetection": "force", // Force module detection to avoid issues with the demos since some don't export anything and would otherwise be treated as global scripts
+    "noUnusedLocals": false, // Some demos don't use all values, so disabled. Set to true in real app.
+    "noUnusedParameters": false, // Error when a function parameter isn't read. Disabled so incomplete exercises don't error
+    "strictPropertyInitialization": true, // Can toggle this for class module.
+    "noImplicitAny": false, // Set to true in real app. But some demos have any for examples, so don't enforce this
+    "skipLibCheck": true // Skip type checking all .d.ts files. Set to true for performance.
+  },
+  "exclude": [
+    "1-ready-to-record/7-runtime-validation-via-zod/7.6-use-cases/example2-web-app",
+    "14-example-apps"
+  ]
+}

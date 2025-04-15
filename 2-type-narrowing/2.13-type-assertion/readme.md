@@ -46,4 +46,4 @@ const name: any = "Cory";
 const nameString = <string>name;
 ```
 
-However, I suggest using `as` since angle brackets can conflict with JSX syntax if you're working with libraries like React that use JSX.
+However, prefer `as` since angle brackets can conflict with JSX syntax if you're working with libraries like React that use JSX.

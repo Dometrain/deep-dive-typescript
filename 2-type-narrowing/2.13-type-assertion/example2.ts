@@ -1,4 +1,4 @@
-// A common use case for type assertion is when working with JSON data fetched from an API.
+// A common use case - working with JSON data fetched from an API.
 interface User {
   id: number;
   name: string;

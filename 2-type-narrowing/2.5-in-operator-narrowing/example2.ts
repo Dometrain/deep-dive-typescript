@@ -1,4 +1,4 @@
-// In TS, can use the `in` operator as a "type guard" to safely check if a property exists.
+// type narrowing via `in` operator - safely check if a property exists.
 type Car = { numDoors: number };
 type Motorcycle = { hasWindshield: boolean };
 

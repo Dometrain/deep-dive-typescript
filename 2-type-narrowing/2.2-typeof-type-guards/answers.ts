@@ -1,7 +1,8 @@
 // Exercise: Type Guards with `typeof`
 
 // Question 1:
-// Write a function `isNumber` that takes a parameter `value` of type `unknown` and returns `true` if the value is a number, otherwise returns `false`.
+// Write a function `isNumber` that takes a parameter `value` of type `unknown`
+// and returns `true` if the value is a number, otherwise returns `false`.
 function isNumber(value: unknown): boolean {
   return typeof value === "number";
 }

@@ -12,4 +12,4 @@ function narrowViaEquality(x: string | number, y: string | boolean) {
 }
 ```
 
-If `x` and `y` are equal, then we know that they must be of the same type. Since x must be a string, we know y is a string if they're strictly equal. So TypeScript narrows the type for y to string.
+If `x` and `y` are equal, then we know that they must be of the same type. Since their only common type is a string, we know `y` is a string if they're strictly equal. So TypeScript narrows the type for `y` to string.

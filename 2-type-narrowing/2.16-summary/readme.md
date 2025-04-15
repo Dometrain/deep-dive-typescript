@@ -1,6 +1,6 @@
 # Summary
 
-We just explored 13 ways to narrow a type.
+We just explored 14 ways to narrow a type.
 
 This table shows an example of each, and describes how each works.
 

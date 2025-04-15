@@ -1,18 +1,18 @@
-// Question 1: Given the code below, use the `satisfies` keyword to eliminate the need for checking if `name` is null.
+// Question 1: Given the code below, use the `satisfies` keyword to
+// narrow `product`'s type and eliminate the need for checking
+// if `name` is exists before the console.log.
 type Product = {
   id: number;
   name: string | null;
 };
 
-// Declared this way, the type is wider than need be because the id field can be null
 const product: Product = {
   id: 1,
   name: "Product 1",
 };
 
-// Must check name before calling toUpperCase because `name` can be null.
 if (product.name) {
-  product.name.toUpperCase();
+  console.log(product.name.toUpperCase());
 }
 
 // Question 2: Given the code below, use the `satisfies` keyword to assure the switch statement exhaustive.
@@ -42,7 +42,8 @@ function describePet(pet: Pet) {
   }
 }
 
-// Question 3: Eliminate the need for typeof checks below using `satisfies` keyword to narrow the `vehicle` type.
+// Question 3: Eliminate the need for typeof checks below using `satisfies` keyword
+//  to narrow the `vehicle` type.
 type VehicleKey = "make" | "model" | "year";
 
 const vehicle: Record<VehicleKey, string | number> = {

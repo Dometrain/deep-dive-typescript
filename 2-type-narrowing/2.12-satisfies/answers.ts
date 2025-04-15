@@ -1,10 +1,11 @@
-// Question 1: Given the code below, use the `satisfies` keyword to fix the compile error.
+// Question 1: Given the code below, use the `satisfies` keyword to
+// narrow `product`'s type and eliminate the need for checking
+// if `name` is exists before the console.log.
 type Product = {
   id: number;
   name: string | null;
 };
 
-// Declared this way, the type is wider than need be because the id field can be null
 const product = {
   id: 1,
   name: "Product 1",

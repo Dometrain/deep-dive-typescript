@@ -1,3 +1,4 @@
+// Type narrowing via exhaustiveness checking
 interface Circle {
   kind: "circle";
   radius: number;
@@ -16,7 +17,7 @@ interface Triangle {
 
 type Shape = Circle | Square | Triangle;
 
-function calculateArea(shape: Shape) {
+function calculateArea(shape: Shape): number {
   switch (shape.kind) {
     case "circle":
       return Math.PI * shape.radius ** 2;

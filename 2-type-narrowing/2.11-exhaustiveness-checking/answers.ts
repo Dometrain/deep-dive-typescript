@@ -24,7 +24,6 @@ function logDescription(vehicle: Vehicle): void {
       console.log(`Bike with pedals: ${vehicle.hasPedals}`);
       break;
     default:
-      // Exhaustiveness check
       const _exhaustiveCheck: never = vehicle;
       return _exhaustiveCheck;
   }

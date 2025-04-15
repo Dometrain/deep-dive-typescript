@@ -1,7 +1,8 @@
 // Exercise: Exhaustiveness Checking in TypeScript
 
 // Question 1:
-// Given the switch below, use the `never` type to implement an exhaustiveness check to ensure all possible vehicles are handled.
+// Given the switch below, use the `never` type to implement an exhaustiveness
+// check to ensure all possible vehicles are handled.
 
 type Car = {
   kind: "car";

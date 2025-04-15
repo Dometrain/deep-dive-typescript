@@ -1,3 +1,4 @@
+// Keeping types narrow via satisfies
 type User = {
   id: string | null;
 };
@@ -12,5 +13,5 @@ const userNarrow = {
   id: "1",
 } satisfies User;
 
-// This errors with userWide because `id` can be null. Works with userNarrow.
+// This errors with userWide because `id` can be null.
 console.log(userNarrow.id.toUpperCase());

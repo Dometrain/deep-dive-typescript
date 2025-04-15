@@ -19,7 +19,7 @@ The act of converting a general type to a more specific type is called type narr
 
 Type narrowing is a way to tell the compiler that a variable is of a more specific type than its current type. This can be useful when you know that a variable is of a more specific type than its current type, but the compiler doesn't.
 
-TypeScript provides at least 13 ways to narrow a type. We're going to explore all these, how they work, and when to consider each.
+TypeScript provides at least 14 ways to narrow a type. We're going to explore all these, how they work, and when to consider each.
 
 1. typeof Type guards
 2. Truthiness narrowing
@@ -33,6 +33,7 @@ TypeScript provides at least 13 ways to narrow a type. We're going to explore al
 10. Exhaustiveness checking via `never`
 11. `satisfies` operator
 12. Type assertions
-13. Non-null assertion
+13. Generic arguments
+14. Non-null assertion
 
 Let's explore each.

@@ -21,7 +21,7 @@ const property: Readonly<Business> = {
 const names: ReadonlyArray<string> = ["Anne", "Beth", "Chris"];
 
 // Uncomment the following line to see the error
-// names.push(4); // Error: Property 'push' does not exist on type 'readonly string[]'.
+// names.push("4"); // Error: Property 'push' does not exist on type 'readonly string[]'.
 
 // Exercise 3: Readonly Function Parameter
 // Question: Create a function called printBusiness that takes a Readonly Business (from question 1) as a parameter.

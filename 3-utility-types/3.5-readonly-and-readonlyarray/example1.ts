@@ -1,3 +1,4 @@
+// readonly utility type
 type Person = {
   name: string;
   age: number;
@@ -8,4 +9,4 @@ const person: Readonly<Person> = {
   age: 30,
 };
 
-// person.age = 31; // Cannot assign to 'age' because it is a read-only property.
+// person.age = 31; // Cannot assign to 'age' because it is read-only.

@@ -12,7 +12,7 @@ for (const key in user) {
 }
 ```
 
-But TypeScript uses the `in` operator for type narrowing. You can use the `in` operator to safely check if a property exists on an object:
+But TypeScript also uses the `in` operator for type narrowing. You can use the `in` operator to safely check if a property exists on an object:
 
 ```ts
 type Car = {

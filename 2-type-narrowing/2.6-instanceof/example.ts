@@ -1,3 +1,4 @@
+// Type narrowing with `instanceof` operator
 class Boat {
   floats = true;
 }

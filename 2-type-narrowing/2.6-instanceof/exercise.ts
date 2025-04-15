@@ -1,7 +1,8 @@
 // Exercise: Type Narrowing with `instanceof`
 
 // Question 1:
-// Write a function `isDog` that takes an argument of type `Animal` and returns true if the argument is an instance of `Dog`, otherwise false.
+// Write a function `isDog` that takes an argument of type `Animal`
+// and returns true if the argument is an instance of `Dog`, otherwise false.
 
 class Animal {
   name: string;
@@ -17,9 +18,3 @@ class Dog extends Animal {
     this.breed = breed;
   }
 }
-
-// Write isDog function here
-
-// Check your answer:
-const animal = new Animal("Generic Animal");
-const dog = new Dog("Buddy", "Golden Retriever");

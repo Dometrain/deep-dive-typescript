@@ -1,3 +1,4 @@
+// type narrowing via discriminated union
 interface Circle {
   kind: "circle";
   radius: number;

@@ -1,7 +1,8 @@
 // Exercise: Type Narrowing with `instanceof`
 
 // Question 1:
-// Write a function `isDog` that takes an argument of type `Animal` and returns true if the argument is an instance of `Dog`, otherwise false.
+// Write a function `isDog` that takes an argument of type `Animal`
+// and returns true if the argument is an instance of `Dog`, otherwise false.
 
 class Animal {
   name: string;
@@ -18,7 +19,6 @@ class Dog extends Animal {
   }
 }
 
-// Answer 1:
 function isDog(animal: Animal): boolean {
   return animal instanceof Dog;
 }

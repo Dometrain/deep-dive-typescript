@@ -8,14 +8,3 @@ function yellHi(name: string | null) {
 
   return "Hi there";
 }
-
-// Question 2: Create a function `processValue` that takes an optional parameter `value` of type `number`.
-// If the `value` is provided, log the number value to the console with two decimal places via toFixed(2).
-// If the `value` is not provided, log "No value" to the console.
-function processValue(value?: number) {
-  if (value) {
-    console.log(`Number value: ${value.toFixed(2)}`);
-  } else {
-    console.log("No value provided");
-  }
-}

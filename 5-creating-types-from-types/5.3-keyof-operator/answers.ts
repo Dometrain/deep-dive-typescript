@@ -8,7 +8,6 @@ interface Book {
   publishedYear: number;
 }
 
-// Answer 1:
 type BookKeys = keyof Book;
 // ^ "title" | "author" | "publishedYear"
 
@@ -28,3 +27,17 @@ const book: Book = {
 };
 
 const name = getProperty(book, "title"); // "Steve McConnell"
+
+// Question 3: Extracting types from an interface
+// Question: Given the following interface, use keyof and the Extract utility type to create a union type called `StringProperties` that
+// only includes name and email.
+
+interface Person {
+  name: string;
+  age: number;
+  email: string;
+  isActive: boolean;
+}
+type StringProperties = Extract<keyof Person, "name" | "email">;
+
+type Answer2 = Extract<keyof Person, "name" | "email">; // 'name' | 'email'

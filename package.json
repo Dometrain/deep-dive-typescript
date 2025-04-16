@@ -6,7 +6,8 @@
     "@tsconfig/bun": "^1.0.7",
     "@types/bun": "^1.2.9",
     "@types/node": "^22.14.0",
-    "@types/react": "^19.0.12"
+    "@types/react": "^19.0.12",
+    "prettier": "^3.5.3"
   },
   "dependencies": {
     "arktype": "^2.1.19",

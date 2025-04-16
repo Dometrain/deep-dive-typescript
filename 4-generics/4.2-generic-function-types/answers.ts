@@ -9,3 +9,8 @@ type Transformer<T, U> = (input: T) => U;
 
 const stringToNumber: Transformer<string, number> = (input) =>
   parseFloat(input);
+
+const result = stringToNumber("123.45");
+
+const numberToString: Transformer<number, string> = (input) => input.toString();
+const result2 = numberToString(123.45);

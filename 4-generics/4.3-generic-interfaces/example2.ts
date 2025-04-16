@@ -1,15 +1,26 @@
-// Can move generic argument "up" to the interface,
-// so that it doesn't need to be repeated in the function signature.
-// This is useful when you want to use the same type for multiple
-// parameters in the function signature.
-interface GenericFirstElementFn<Type> {
-  (arg: Type): Type; // Now this is a non-generic func signature that's a part of a generic type
+import type { User } from "./user";
+
+// Type argument on each method
+interface Repository {
+  getById<T>(id: string): T;
+  getAll<T>(): T[];
+  create<T>(user: T): void;
 }
 
-function firstElement<T>(arg: T): T {
-  return arg;
-}
+const userRepository: Repository = {
+  getById: <T>(id: string) => {
+    // Implementation goes here
+    return {} as T;
+  },
+  getAll: <T>() => {
+    // Implementation goes here
+    return [] as T[];
+  },
+  create: <T>(user: T) => {
+    // Implementation goes here
+  },
+};
 
-// Now must specify the type when creating the function type variable.
-// This is because the generic type parameter "Type" is now part of the interface, not the function signature.
-let myFirstElement: GenericFirstElementFn<number> = firstElement;
+// Have to specify the type argument every time we invoke a method 👎
+userRepository.getById<User>("123");
+userRepository.getAll<User>(); //

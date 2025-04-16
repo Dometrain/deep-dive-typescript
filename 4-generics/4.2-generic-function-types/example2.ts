@@ -4,6 +4,4 @@ function firstElement<T>(array: T): T {
 
 // Function type, with a generic type parameter.
 // Note that different identifiers can be used, but signature must be compatible.
-let FirstElementFn: <Type>(arg: Type) => Type;
-
-const myFirstElement = firstElement;
+const firstElementFn: <Type>(arg: Type) => Type = firstElement;

@@ -1,4 +1,4 @@
-// Can write generic type as an interface too.
+// Can write generic type as an interface or type alias too.
 interface GenericFirstElementFn {
   <Type>(arg: Type): Type;
 }

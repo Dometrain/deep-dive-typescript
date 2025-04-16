@@ -3,4 +3,4 @@ function firstElement<T>(arg: T): T {
   return arg;
 }
 
-let myFirstElement: { <Type>(arg: Type): Type } = firstElement;
+let firstElementFn: { <Type>(arg: Type): Type } = firstElement;

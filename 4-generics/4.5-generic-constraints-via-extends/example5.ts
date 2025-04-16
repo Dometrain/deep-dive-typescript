@@ -1,5 +1,4 @@
-// Generic constraints on classes
-
+// Generic constraints with class
 class Mechanic {
   hasWrench: boolean = true;
 }

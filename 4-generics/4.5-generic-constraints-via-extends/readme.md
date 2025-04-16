@@ -44,11 +44,3 @@ class Queue<T> {
 ```
 
 This class has a generic type `T` that is used to define the type of the items in the queue. The `push` method takes an argument of type `T`, and the `pop` method returns a value of type `T` or `undefined`. This is a great example of how a generic type conveys a type relationship between multiple pieces of code.
-
-Can use the const keyword before extends to make the type read-only. For example:
-
-```ts
-function firstElement<const T extends any[]>(arr: T): T[number] {
-  return arr[0];
-}
-```

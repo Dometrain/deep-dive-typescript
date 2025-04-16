@@ -24,7 +24,7 @@ interface Identifiable {
 
 function findById<T extends Identifiable>(
   items: T[],
-  id: number
+  id: number,
 ): T | undefined {
   return items.find((item) => item.id === id);
 }
@@ -35,22 +35,36 @@ const users = [
   { id: 2, name: "Bob" },
 ];
 
+const products = [
+  { id: 1, title: "Laptop" },
+  { id: 2, title: "Phone" },
+];
+
+const product = findById(products, 1); // Should return { id: 1, title: "Laptop" }
 const user = findById(users, 1); // Should return { id: 1, name: "Alice" }
 
-// 3. Create a generic function called `findKeyByValue` that accepts two arguments, an object of key/value pairs, and a value to find.
-// The function should return the corresponding key for the provided value, or undefined if the provided value isn't found in the provided object.
-// Use two generic type arguments. The first type argument `TObject` will represent the type of the object passed in.
-// The second type argument will represent the value's type, with a name of `TValue`.
+// 3. Create a generic function called `findKeyByValue` that accepts two arguments,
+// an object of key/value pairs, and a value to find. The function should return the
+// corresponding key for the provided value, or undefined if the provided value isn't
+// found in the provided object. Use two generic type arguments":
+// 1. `TObject` - the type of the object passed in
+// 2. `TValue` - the value's type
 // Use extends to constrain `TObject` to be an object with string keys and values of type `TValue`.
+
 function findKeyByValue<TObject extends Record<string, TValue>, TValue>(
   obj: TObject,
-  value: TValue
+  value: TValue,
 ): string | undefined {
   return Object.keys(obj).find((key) => obj[key] === value);
 }
 
 // Usage:
-const ageMap = { sam: 12, tina: 22, larry: 34 };
+const ageMap = {
+  sam: 12,
+  tina: 22,
+  larry: 34,
+};
+
 const userName = findKeyByValue(ageMap, 22); // Type: string | undefined
 console.log(userName); // "tina"
 const nonExistentUser = findKeyByValue(ageMap, 40); // Type: string | undefined

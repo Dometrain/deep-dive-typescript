@@ -1,14 +1,26 @@
-// Repository that defaults to any
-class Repository<T = any> {
-  findAll(): T[] {
-    return [] as T[];
-  }
+// If inference can't choose a candidate, the default type is inferred.
+
+type User = {
+  id: number;
+  name: string;
+  age?: number;
+};
+
+type Product = {
+  id: number;
+  name: string;
+  price?: number;
+};
+
+interface Dictionary<T extends User | Product = User> {
+  [key: string]: T;
 }
 
-// Usage with default `any`
-const genericRepo = new Repository();
-const users = genericRepo.findAll(); // users: any[]
+const apple: Product = {
+  id: 1,
+  name: "Apple",
+};
 
-// Usage with a specific model
-const userRepo = new Repository<{ id: number; name: string }>();
-const userList = userRepo.findAll(); // userList: { id: number; name: string }[]
+// Even though `apple` is a `Product`, the default type is
+// inferred as `User` since inference can't choose a candidate.
+const products: Dictionary = { a: apple };

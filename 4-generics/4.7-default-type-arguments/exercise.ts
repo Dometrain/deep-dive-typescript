@@ -18,10 +18,15 @@
 // ------------------------------------------------
 
 // Question 2:
-// Create a generic type alias `Optional` that makes all properties of a given type `T` optional.
-// Use a default type of `{ id: number }` for the generic parameter `T`.
+// Create a `Repository` class that represents a data repository.
+// It should have a generic type parameter `T` that represents the model type
+// and a defaults to type `any`.
+// It should have a method `findAll` that returns an array of type `T`.
+// Just stub in the findAll implementation as `return [] as T[];`
 
 // Example usage:
-// type User = { id: number; name: string };
-// const user: Optional<User> = { id: 1 }; // all fields are optional
-// const defaultOptional: Optional = {}; // T defaults to { id: number }
+// const genericRepo = new Repository(); // Use default of `any`
+// const users = genericRepo.findAll(); // users: any[]
+
+// const userRepo = new Repository<{ id: number; name: string }>(); // Use a specific model
+// const userList = userRepo.findAll(); // userList: { id: number; name: string }[]

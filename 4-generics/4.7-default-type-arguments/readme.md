@@ -1,21 +1,19 @@
 # Generic Param Defaults
 
-You can provide default values for generic type parameters. This is useful when you want to provide a default type for a generic type parameter. If the type parameter is not provided, the default type is used.
+You can provide default values for generic type parameters. If the type parameter is not provided, the default type is used.
 
-Here's an example:
+Here's an example of a Dictionary type that can hold any value by default, but can also be constrained to a specific type if desired:
 
 ```typescript
-function echo<T = string>(input: T): T {
-  return input;
+interface Dictionary<T = any> {
+  [key: string]: T;
 }
 
-const result = echo("Hello, world!");
+// Can omit the type if I want to allow any value
+const flexibleDict: Dictionary = { name: "Alice", age: 30 };
 
-console.log(result); // Hello, world!
-
-const result2 = echo(42);
-
-console.log(result2); // 42
+// Or can specify a strict type
+const numberDict: Dictionary<number> = { a: 1, b: 2 };
 ```
 
 ## Rules

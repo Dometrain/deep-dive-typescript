@@ -16,7 +16,8 @@ class Box<T> {
     return this.items;
   }
 
-  // Static methods can't access the class' type parameter - It's only accessible by the instance.
+  // Static methods can't access the class' type parameter.
+  // It's only accessible by the instance.
   // So must accept a separate T here.
   static removeItem<T>(items: T[], index: number): T[] {
     return items.filter((_, i) => i !== index);

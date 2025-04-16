@@ -1,14 +1,18 @@
-// Default to any if no type is specified
-interface Store<T = any> {
-  state: T;
-  setState: (newState: T) => void;
+// A default type argument makes a generic type more flexible.
+// It allows users to omit the type argument when they don't care about it.
+// (Useful when the type argument is not essential).
+interface Dictionary<T = any> {
+  [key: string]: T;
 }
 
-// Default usage (accepts any state)
-const genericStore: Store = { state: { user: "Cory" }, setState: () => {} };
+// Can omit the type if I want to allow any value
+const flexibleDictionary: Dictionary = {
+  Alice: 30,
+  Bob: "25", // oops
+};
 
-// Typed usage
-const userStore: Store<{ name: string; age: number }> = {
-  state: { name: "Alice", age: 30 },
-  setState: (newState) => console.log(newState),
+// Or can specify a strict type
+const numberDictionary: Dictionary<number> = {
+  a: 1,
+  b: 2,
 };

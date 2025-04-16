@@ -1,26 +1,11 @@
-// If inference can't choose a candidate, the default type is inferred.
-
-type User = {
-  id: number;
-  name: string;
-  age?: number;
-};
-
-type Product = {
-  id: number;
-  name: string;
-  price?: number;
-};
-
-interface Dictionary<T extends User | Product = User> {
+// Same rules as JS args:
+// 1. Default value must satisfy the type parameter's constraints
+// 2. Default type arguments must be last
+interface Dictionary<T extends string | number = string> {
   [key: string]: T;
 }
 
-const apple: Product = {
-  id: 1,
-  name: "Apple",
-};
-
-// Even though `apple` is a `Product`, the default type is
-// inferred as `User` since inference can't choose a candidate.
-const products: Dictionary = { a: apple };
+// Fails
+// interface Dictionary2<T extends string | number = boolean> {
+//   [key: string]: T;
+// }

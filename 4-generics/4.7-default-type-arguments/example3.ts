@@ -1,9 +1,15 @@
-// Like JS args, default type arg value must satisfy the type parameter's constraints
-interface Dictionary<T extends string | number = string> {
-  [key: string]: T;
+// Default to any if no type is specified
+interface Store<T = any> {
+  state: T;
+  setState: (newState: T) => void;
 }
 
-// Fails
-// interface Dictionary2<T extends string | number = boolean> {
-//   [key: string]: T;
-// }
+// Default usage (accepts any state)
+const genericStore: Store = { state: { user: "Cory" }, setState: () => {} };
+
+// Typed usage
+const userStore: Store<{ name: string; age: number }> = {
+  state: { name: "Alice", age: 30 },
+  setState: (newState) => console.log(newState),
+};
+userStore.setState({ name: "Bob", age: 25 }); // Output: { name: 'Bob', age: 25 }

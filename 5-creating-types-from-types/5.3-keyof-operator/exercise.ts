@@ -20,3 +20,14 @@ interface Book {
 // };
 
 // const name = getProperty(book, "title"); // "Steve McConnell"
+
+// Exercise 3: Extracting types from an interface
+// Question: Given the following interface, use keyof and the Extract utility type
+// to create a union type called `StringProperties` that only includes name and email.
+
+interface Person {
+  name: string;
+  age: number;
+  email: string;
+  isActive: boolean;
+}

@@ -1,6 +1,11 @@
-type User = {
-  id: number;
-  name: string;
-  // We used the index signature syntax to specify a type for an object that accepts any property like this
-  [key: string]: any; // index signature
+// Using mapped type to derive EmployeePermissions
+
+type EmployeeConfig = {
+  email: string;
+  age: number;
+  role: string;
+};
+
+type EmployeePermissions = {
+  [Property in keyof EmployeeConfig as `change${Capitalize<Property>}`]: boolean;
 };

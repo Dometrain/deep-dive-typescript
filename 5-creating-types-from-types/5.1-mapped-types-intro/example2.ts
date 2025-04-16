@@ -1,5 +1,6 @@
-// Using mapped type to derive EmployeePermissions
+// Why mapped types? Create a new type from an existing type with our own custom logic.
 
+// Sure, I could copy/paste like this...
 type EmployeeConfig = {
   email: string;
   age: number;
@@ -7,5 +8,7 @@ type EmployeeConfig = {
 };
 
 type EmployeePermissions = {
-  [Property in keyof EmployeeConfig as `change${Capitalize<Property>}`]: boolean;
+  changeEmail: boolean;
+  changeAge: boolean;
+  changeRole: boolean;
 };

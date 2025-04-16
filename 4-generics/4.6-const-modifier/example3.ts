@@ -1,7 +1,5 @@
 // Returns a function that takes a name and returns their title.
-function parseNames<const T extends { name: string; title: string }>(
-  names: T[]
-) {
+function parseNames<T extends { name: string; title: string }>(names: T[]) {
   return (name: T["name"]) => names.find((n) => n.name === name)?.title;
 }
 
@@ -17,4 +15,4 @@ const getTitleByName = parseNames([
 ]);
 
 // Note autocomplete support when using const modifier
-const year = getTitleByName("Cory");
+const title = getTitleByName("Cory");

@@ -24,9 +24,9 @@ class Stack<T> {
 }
 
 // Example usage:
-// const stack = new Stack<number>();
-// stack.push(10);
-// stack.push(20);
-// console.log(stack.pop()); // Output: 20
-// console.log(stack.pop()); // Output: 10
-// console.log(stack.isEmpty()); // Output: false
+const stack = new Stack<number>();
+stack.push(10);
+stack.push(20);
+console.log(stack.pop()); // Output: 20
+console.log(stack.pop()); // Output: 10
+console.log(stack.isEmpty()); // Output: false

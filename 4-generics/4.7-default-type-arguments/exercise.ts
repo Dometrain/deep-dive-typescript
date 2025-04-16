@@ -1,4 +1,4 @@
-// Exercise: Testing Your Knowledge of Generic Parameter Defaults in TypeScript
+// Exercise: Generic Parameter Defaults
 
 // Question 1:
 // Create a generic interface `ApiResponse` that represents an HTTP response.

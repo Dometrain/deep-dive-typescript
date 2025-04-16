@@ -2,7 +2,11 @@
 
 ## Generics
 
-I want to start with a word of warning: Generics may seem intimidating at first, but they exist to solve a simple idea: Sometimes you need to write some code that works with multiple types. For example, you might want to write a function that takes an array of any type and returns the first element of the list. You could write a function like this:
+We just used a bunch of generic types that are built into TypeScript. But you can create your own generic types too.
+
+So why would you create your own generic type? Well, sometimes you need to write some code that works with multiple types.
+
+For example, you might want to write a function that takes an array of any type and returns the first element of the list. You could write a function like this:
 
 ```typescript
 function firstElement(arr: any[]) {

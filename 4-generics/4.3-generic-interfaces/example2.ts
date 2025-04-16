@@ -1,7 +1,9 @@
-// Can move generic argument "up" to the interface, so that it doesn't need to be repeated in the function signature.
-// This is useful when you want to use the same type for multiple parameters in the function signature.
+// Can move generic argument "up" to the interface,
+// so that it doesn't need to be repeated in the function signature.
+// This is useful when you want to use the same type for multiple
+// parameters in the function signature.
 interface GenericFirstElementFn<Type> {
-  (arg: Type): Type; // Note change: Now this is a non-generic func signature that's a part of a generic type
+  (arg: Type): Type; // Now this is a non-generic func signature that's a part of a generic type
 }
 
 function firstElement<T>(arg: T): T {

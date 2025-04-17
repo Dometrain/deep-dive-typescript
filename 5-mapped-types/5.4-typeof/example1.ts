@@ -1,8 +1,6 @@
-// JS already has a typeof operator for values.
-// TypeScript has a `typeof` operator for types.
-// It creates types from other types, values, or functions.
+// JS has `typeof` for values.
+// TypeScript has `typeof` for getting the type of a type, value, or function.
 
 // Create a type from a value:
 let message = "hello";
-type messageType = typeof message;
-// ^ type messageType = "string" // or, would be literal type "hello" if const is used above.
+type MessageType = typeof message; // "string" or, "hello" if const is used above.

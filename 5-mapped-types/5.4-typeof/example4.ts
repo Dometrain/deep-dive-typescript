@@ -1,8 +1,7 @@
-// keyof and typeof can be used together to create a union of keys from an existing object:
+// Use `keyof` and `typeof` together to create a union of an object's keys:
 const user = {
   name: "Alice",
   age: 15,
 };
 
-type UserKeys = keyof typeof user; // or just `keyof User` since it's defined above
-// ^ "name" | "age"
+type UserKey = keyof typeof user; // "name" | "age"

@@ -1,5 +1,7 @@
-function processValue<T extends string>(value: T): `prefix-${T}` {
-  return `prefix-${value}`;
-}
+// Can use TypeScript's utility types inside a template literal type.
+type SecureUrl = `https://${Lowercase<string>}`;
 
-const result = processValue("example"); // Type is "prefix-example"
+const url: SecureUrl = "https://example.com"; // OK
+
+// const url2: SecureUrl = "http://example.com"; // Error
+// const url3: SecureUrl = "https://Example.com"; // Error

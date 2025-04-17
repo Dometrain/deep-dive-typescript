@@ -1,3 +1,4 @@
+// Can reference a union too
 type Units = "px" | "rem" | "em" | "%";
 
 type Spacing = `${number}${Units}`;

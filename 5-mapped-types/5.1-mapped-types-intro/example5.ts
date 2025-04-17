@@ -1,9 +1,8 @@
 // Mapped type syntax example
 
-type ExistingType = { id: number; name: string };
-type NewKeyType = string;
+type User = { id: number; name: string };
 
-type NewType = {
+type UserWithAllStringValues = {
   // In a mapped type, the index signature syntax maps over the type's keys
-  [Key in keyof ExistingType]: NewKeyType;
+  [Key in keyof User]: string;
 };

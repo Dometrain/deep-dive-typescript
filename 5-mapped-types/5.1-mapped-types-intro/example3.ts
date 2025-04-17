@@ -1,4 +1,4 @@
-// Using mapped type to derive EmployeePermissions
+// Derive EmployeePermissions via a mapped type.
 
 type EmployeeConfig = {
   email: string;

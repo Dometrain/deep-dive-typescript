@@ -1,6 +1,12 @@
 # Mapped Types Intro
 
-TypeScript supports creating types from other types. There are several ways to do this, such as using utility types (which we saw earlier) and other approaches which we'll explore in this section including conditional types, mapped types, template literal types, and more.
+TypeScript supports creating types from other types. We already explored TypeScript's built-in utility types like Pick, Required, and so on. They're are an easy way to create new types from existing types.
+
+But what if TypeScript's built-in utility types aren't enough? What if you want to create a complex new type from an existing type using your own logic?
+
+That's where mapped types come in handy. A mapped type maps an existing type to a new type.
+
+In this section we'll explore mapped types in detail including key features like template literal types, conditional types, looping, and more.
 
 Let's begin with a simple mapping example using plain JS:
 

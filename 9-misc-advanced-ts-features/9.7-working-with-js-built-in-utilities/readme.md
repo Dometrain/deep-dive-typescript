@@ -1,0 +1,3 @@
+Some functions in the standard library are generic. For example, `Array.prototype.map` is a generic function that takes a callback function as an argument. The callback function can be of any type, and the return type of the `map` function will be the same as the return type of the callback function.
+
+Sometimes a function accepts a generic type as an argument. For example, the `Array.prototype.filter` function takes a callback function that returns a boolean value. The return type of the `filter` function is an array of the same type as the input array, but only includes elements that pass the test implemented by the callback function.

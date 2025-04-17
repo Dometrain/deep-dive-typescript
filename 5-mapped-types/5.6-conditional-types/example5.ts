@@ -1,4 +1,4 @@
-// When conditional types act on a generic type, they become distributive - Another example
+// When conditional types act on a generic type, they become distributive
 
 // So, given this type:
 type ToArray<Type> = Type extends any ? Type[] : never;

@@ -10,7 +10,8 @@ function doubleArray2(numbers: number[]) {
   return numbers.map((n) => n * 2);
 }
 
-// And generic args should appear twice (remember, they exist to enforce correspondence between types):
+// And generic args should appear twice (remember, they exist to
+// enforce correspondence between types):
 // This generic is needless - it's only used once, so there's no correspondence.
 function sayHi<T extends string>(name: T) {
   console.log("Hi, " + name);

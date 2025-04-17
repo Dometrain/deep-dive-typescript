@@ -26,3 +26,18 @@ function logDescription(vehicle: Vehicle): void {
       break;
   }
 }
+
+// Question 2:
+// Given the switch below, specify an explicit return type
+// to ensure all possible vehicles are handled.
+// After adding the explicit return type, ensure TypeScript
+// catches the error when a case is removed.
+
+function getDescription(vehicle: Vehicle) {
+  switch (vehicle.kind) {
+    case "car":
+      return `Car with ${vehicle.numberOfDoors} doors`;
+    case "bike":
+      return `Bike with pedals: ${vehicle.hasPedals}`;
+  }
+}

@@ -1,17 +1,14 @@
-// Tip: Push type params down
+// Tip: Consider pushing type params down
 
-function firstElement1<Type>(arr: Type[]) {
-  return arr[0];
+// Implicit return type is `any`.
+// TS uses the constraint type instead of resolving the type during a call.
+function firstElement1<T extends any[]>(array: T) {
+  return array[0];
 }
 
-function firstElement2<Type extends any[]>(arr: Type) {
-  // Implicit return type is `any`.
-  // TS uses the constraint type above instead of resolving the type during a call.
-  return arr[0];
+function firstElement2<T>(array: T[]) {
+  return array[0];
 }
 
-const a = firstElement1([1, 2, 3]);
-// ^ const a: number 👍
-
-const b = firstElement2([1, 2, 3]);
-// ^ const b: any 🚩
+const a = firstElement1([1, 2, 3]); // any 👎
+const b = firstElement2([1, 2, 3]); // number 👍

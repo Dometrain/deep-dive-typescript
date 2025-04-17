@@ -1,4 +1,4 @@
-// Type narrowing via exhaustiveness checking
+// Exhaustiveness checking via explicit return
 interface Circle {
   kind: "circle";
   radius: number;
@@ -25,8 +25,5 @@ function calculateArea(shape: Shape): number {
       return shape.sideLength ** 2;
     case "triangle":
       return 0.5 * shape.base * shape.height;
-    default:
-      const _exhaustiveCheck: never = shape; // error if we don't handle all cases
-      return _exhaustiveCheck;
   }
 }

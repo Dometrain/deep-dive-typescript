@@ -1,4 +1,5 @@
-// Tip 4. Consider using defaults to save people some keystrokes.
+// Tip 4. Using defaults saves people some keystrokes.
+// BUT: it may be a tradeoff between convenience and safety.
 
 // Default the data type to `unknown`.
 type ApiResponse<T = unknown> = {

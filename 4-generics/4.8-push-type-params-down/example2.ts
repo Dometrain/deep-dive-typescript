@@ -1,4 +1,5 @@
-// In this case, the generic type at the class level makes sense (because all the methods work with the same type).
+// In this case, the generic type at the class level makes sense
+// (because all the methods work with the same type).
 type User = {
   id: number;
   name: string;
@@ -23,7 +24,8 @@ class Repository<T> {
 
 const userRepo = new Repository<User>(); // Must specify `User` at instantiation
 
-// Pushing type params down would allow for different types in each method, but that's likely not attractive for a repository.
+// Pushing type params down would allow for different types in each method,
+// but that's likely not attractive for a repository.
 class Repository2 {
   getById<T>(id: number): T {
     /* Implementation */

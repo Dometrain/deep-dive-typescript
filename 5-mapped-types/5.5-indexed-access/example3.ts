@@ -13,5 +13,9 @@ const Users = [
   { name: "Eve", age: 38 },
 ];
 
-type User = (typeof Users)[number]; // Get union of unique types in the array (Change one object to see the union)
-type Age = (typeof Users)[number]["age"]; // Get union of unique types for `age`. (Change one age to a string to see the union change)
+// Get union of unique types in the array (Change one object to see the union)
+type User = (typeof Users)[number];
+
+// Get union of unique types for `age`.
+// (Change one age to a string to see the union change)
+type Age = (typeof Users)[number]["age"];

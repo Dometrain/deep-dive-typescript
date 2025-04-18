@@ -1,6 +1,6 @@
 // JS has `typeof` for values.
-// TypeScript has `typeof` for getting the type of a type, value, or function.
+console.log(typeof "Hi"); // Prints "string"
 
-// Create a type from a value:
+// TypeScript has `typeof` for getting the type of a value or function:
 let message = "hello";
 type MessageType = typeof message; // "string" or, "hello" if const is used above.

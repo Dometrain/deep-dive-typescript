@@ -3,7 +3,7 @@
 const theme = {
   light: "#fff",
   dark: "#000",
-  //   dark2: "#000", // If uncommented, `ThemeColor` union below still only includes unique values
+  // dark2: "#000", // If uncommented, `ThemeColor` union below still only includes unique values
 } as const;
 
 type Theme = keyof typeof theme; // "light" | "dark"

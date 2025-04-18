@@ -1,4 +1,4 @@
-// Exercise: Testing knowledge of the `keyof` type operator in TypeScript
+// Exercise: The `keyof` type operator
 
 // Question 1:
 // Given the following interface, use the `keyof` operator to create a union type

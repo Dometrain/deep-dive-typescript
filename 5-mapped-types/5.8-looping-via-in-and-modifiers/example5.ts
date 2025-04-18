@@ -4,11 +4,12 @@
 // 3. `?` (Makes properties optional)
 // 4. `-?` (Removes optional, to make properties required)
 
-// 3. ? example
-type OptionalProperties<T> = {
-  [K in keyof T]?: T[K];
+// 2. -readonly example
+type MutableProperties<T> = {
+  -readonly [K in keyof T]: T[K];
 };
 
-type User = { id: number; name: string };
-type OptionalUser = OptionalProperties<User>;
-const user: OptionalUser = {}; // valid
+type ImmutableUser = { readonly id: number; readonly name: string };
+type MutableUser = MutableProperties<ImmutableUser>;
+const john: MutableUser = { id: 1, name: "John" };
+john.id = 2; // works

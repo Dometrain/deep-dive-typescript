@@ -4,12 +4,13 @@
 // 3. `?` (Makes properties optional)
 // 4. `-?` (Removes optional, to make properties required)
 
-// 2. -readonly example
-type MutableProperties<T> = {
-  -readonly [K in keyof T]: T[K];
+// 1. readonly example
+type RequiredProperties<T> = {
+  readonly [K in keyof T]: T[K];
 };
 
-type ImmutableUser = { readonly id: number; readonly name: string };
-type MutableUser = MutableProperties<ImmutableUser>;
-const john: MutableUser = { id: 1, name: "John" };
-john.id = 2; // works
+type User1 = { id: number; name: string };
+type ReadonlyUser = RequiredProperties<User1>;
+const user1: ReadonlyUser = { id: 1, name: "John" };
+// @ts-expect-error
+user1.id = 2; // This should cause a TypeScript error

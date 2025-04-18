@@ -1,11 +1,8 @@
-// Get unique types in array
-// type Flatten<T> = T extends any[] ? T[number] : T;
-
-// or, can use infer
+// Recursively flatten an array
 type Flatten<T> = T extends Array<infer Item> ? Item : T;
 
-// Extracts out the element type.
-type Str = Flatten<string | number[]>;
+type FlattenDeep<T> = T extends Array<infer U> ? Flatten<U> : T;
 
-// Leaves a non-array type alone.
-type Num = Flatten<number>;
+// Usage
+type NestedArray = number[][][];
+type NumArray = FlattenDeep<NestedArray>; // number[]

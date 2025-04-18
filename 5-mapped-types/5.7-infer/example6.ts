@@ -1,14 +1,7 @@
-// Get a function's return type
-// Uses `R` to represent the function T's return type
-type ReturnType<T extends (...args: any) => any> = T extends (
-  ...args: any
-) => infer R
-  ? R
-  : any;
+// Get unique types in array
+type Flatten<T> = T extends Array<infer Item> ? Item : T;
 
-// Example usage
-function greet(name: string): string {
-  return `Hello, ${name}`;
-}
+type Flatten2<T> = T extends any[] ? T[number] : T; // alternative approach
 
-type GreetReturnType = ReturnType<typeof greet>; // string
+type Str = Flatten<string | number[]>; // Extracts out the element type.
+type Num = Flatten<number>; // Leaves a non-array type alone.

@@ -9,5 +9,5 @@ type Parameters<T extends (...args: any) => any> = T extends (
 // usage examples
 type Func = (a: number, b: string) => boolean;
 type Args = Parameters<Func>; // [number, string]
-type Args2 = Parameters<(a: number) => void>; // [number]
+type Args2 = Parameters<(a: number) => void>; // [a: number]
 type Args3 = Parameters<() => void>; // []

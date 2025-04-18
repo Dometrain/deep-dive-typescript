@@ -1,4 +1,5 @@
-// `infer` has a very specific use: It's only used in a conditional type's extends clause
+// Problem: You want to declare a type variable within an extends clause.
+// Solution: `infer`. It's ONLY used in a conditional type's extends clause.
 
 type ArrayType<T> = T extends Array<infer ElementType> ? ElementType : never;
 

@@ -1,8 +1,12 @@
-// Recursively flatten an array
-type Flatten<T> = T extends Array<infer Item> ? Item : T;
+// Can use the variable declared via infer in other places in the conditional type
+// Also note distribution: If T is a union, the infer variable
+// is created for each member of the union
+type StringsThatCanBeNumbers<T> = T extends `${infer U}`
+  ? `${U}` extends `${number}`
+    ? U
+    : never
+  : never;
 
-type FlattenDeep<T> = T extends Array<infer U> ? Flatten<U> : T;
-
-// Usage
-type NestedArray = number[][][];
-type NumArray = FlattenDeep<NestedArray>; // number[]
+// usage
+type Num1 = StringsThatCanBeNumbers<"123" | "456" | "abc">; // "123" | "456"
+type Num2 = StringsThatCanBeNumbers<"hello">; // never

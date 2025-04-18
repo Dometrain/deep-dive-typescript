@@ -1,43 +1,13 @@
-// Imagine we want to declare a repetitive type like a daily schedule:
-
-type WorkSchedule = {
-  Monday: {
-    start: string;
-    end: string;
-  };
-  Tuesday: {
-    start: string;
-    end: string;
-  };
-  Wednesday: {
-    start: string;
-    end: string;
-  };
-  Thursday: {
-    start: string;
-    end: string;
-  };
-  Friday: {
-    start: string;
-    end: string;
-  };
+// Goal: Create a new type like this, but with all properties set to boolean
+type Features = {
+  updatePhoto: () => void;
+  editProfile: () => void;
 };
 
-// Instead, we can loop over union members via index access syntax with the `in` operator
-type Workday = "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday";
-
-type Schedule = {
-  // Read as "for each day in Workday"
-  [day in Workday]: {
-    start: string;
-    end: string;
-  };
+// Type mapper
+type BooleanProperties<Type> = {
+  [Property in keyof Type]: boolean;
 };
 
-const schedule: Schedule = {
-  Monday: { start: "9am", end: "5pm" },
-  Tuesday: { start: "9am", end: "5pm" },
-  Wednesday: { start: "9am", end: "5pm" },
-  Thursday: { start: "9am", end: "5pm" },
-  Friday: { start: "9am", end: "3pm" },
-};
+// Mapped type
+type FeatureToggles = BooleanProperties<Features>;

@@ -1,4 +1,4 @@
-import { setupCounter } from "./counter.js";
+import { setupCounter } from "./local-storage.js";
 import { setupForm } from "./form.js";
 import "./url.js";
 import "./api.js";

@@ -1,0 +1,10 @@
+{
+  "name": "typescript-monorepo",
+  "scripts": {
+    "start": "bun --filter '*' start"
+  },
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "typescript-frontend",
+  "module": "esnext",
+  "scripts": {
+    "start": "bun run --watch index.ts"
+  },
+  "dependencies": {
+    "typescript": "^5.7.2",
+    "zod": "^4.0.0-beta.20250412T085909"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.14"
+  }
+}

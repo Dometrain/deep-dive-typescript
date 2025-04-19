@@ -1,7 +1,7 @@
 // URL parameter validation via Zod
 import { z } from "zod";
 
-const productIdSchema = z.coerce.number().int(); // Tell Zod to coerce the productId in the URL to a numeric value
+const productIdSchema = z.coerce.number().positive(); // Tell Zod to coerce the productId in the URL to a numeric value
 
 const searchParams = new URLSearchParams(window.location.search);
 const productIdParam = searchParams.get("productId");

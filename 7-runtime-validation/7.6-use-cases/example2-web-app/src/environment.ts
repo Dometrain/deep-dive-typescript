@@ -3,9 +3,10 @@ import { z } from "zod";
 
 const environmentSchema = z.object({
   VITE_ENVIRONMENT: z.enum(["development", "production"]),
+  VITE_API_BASE_URL: z.url(),
   VITE_PORT: z.coerce.number().default(3000),
 });
 
-export const environment = environmentSchema.parse(import.meta.env);
+export const env = environmentSchema.parse(import.meta.env);
 
-console.log("environment", environment);
+console.log("environment", env);

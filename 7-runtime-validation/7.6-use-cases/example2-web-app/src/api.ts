@@ -1,5 +1,6 @@
 // Validating API response with Zod
 import { z } from "zod";
+import { env } from "./environment";
 
 const productsSchema = z.object({
   id: z.string(),
@@ -11,7 +12,7 @@ const productsSchema = z.object({
 type Product = z.infer<typeof productsSchema>;
 
 async function getProducts(): Promise<Product[]> {
-  const resp = await fetch("http://localhost:3001/products");
+  const resp = await fetch(env.VITE_API_BASE_URL + "/products");
   const data = await resp.json();
   const products = productsSchema.array().parse(data);
   return products;

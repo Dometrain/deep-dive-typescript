@@ -6,7 +6,10 @@
 
 @LogClass
 class Person {
-  constructor(public name: string, public age: number) {}
+  constructor(
+    public name: string,
+    public age: number
+  ) {}
 }
 
 function LogClass(target: Function) {
@@ -20,7 +23,10 @@ const person = new Person("Alice", 30);
 // whenever the method is called. Apply this decorator to the  `greet` method in the `User` class.
 
 class User {
-  constructor(public name: string, public age: number) {}
+  constructor(
+    public name: string,
+    public age: number
+  ) {}
 
   @logMethod
   greet(greeting: string) {
@@ -42,7 +48,7 @@ const user = new User("Bob", 25);
 console.log(user.greet("Hello"));
 
 // Question 3:
-// Create a property decorator called `logSetter` that logs the setters name and the new value when a property is set.
+// Create a property decorator called `logSetter` that logs "name set to 'name here'" when a property is set.
 // Apply this decorator to the `name` property in the `Account` class.
 
 class Account {

@@ -4,9 +4,8 @@
 // 2. `K` - A union of keys to omit from the new object
 // Hint: Compose other built-in utility types to implement this.
 
-// `Pick` accepts a target type, and a union of properties to keep.
-// `Exclude` accepts a union, so use `keyof` to get a union of `T`'s keys,
-// and pass it `K` which represents the keys to omit.
+// 1. Accept a target type called `T`, and a union of keys in the type, called `K`.
+// 2. Use `Pick` to create a new type with only the properties in `T` whose keys are not in `K`.
 type MyOmit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>;
 
 // Test

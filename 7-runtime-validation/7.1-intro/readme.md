@@ -27,7 +27,7 @@ npm install zod
 ## Usage
 
 ```ts
-import { z } from "zod";
+import * as z from "zod";
 
 const userSchema = z.object({
   name: z.string(),

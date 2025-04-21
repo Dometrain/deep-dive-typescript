@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 // primitive values
 z.string();
@@ -11,7 +11,6 @@ z.symbol();
 // empty
 z.undefined();
 z.null();
-z.void(); // accepts undefined
 
 // catch-all
 z.any();

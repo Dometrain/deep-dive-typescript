@@ -1,5 +1,5 @@
 // Arrays
-import { z } from "zod";
+import * as z from "zod";
 
 const stringArray = z.array(z.string());
 

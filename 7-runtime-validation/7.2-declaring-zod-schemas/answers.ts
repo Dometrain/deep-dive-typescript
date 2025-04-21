@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 // Exercise: Testing Your Knowledge of Zod
 
@@ -13,7 +13,7 @@ const employeeSchema = z.object({
   id: z.string(),
   name: z.string(),
   age: z.number().min(0).max(150),
-  email: z.string().email(),
+  email: z.email(),
   inAdmin: z.boolean(),
 });
 

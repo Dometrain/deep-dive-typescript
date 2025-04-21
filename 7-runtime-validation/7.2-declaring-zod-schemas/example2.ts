@@ -1,6 +1,6 @@
-// Strings
-import { z } from "zod";
+import * as z from "zod";
 
+// Strings
 z.string().max(5);
 z.string().min(5);
 z.string().length(5);

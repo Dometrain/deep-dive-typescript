@@ -1,19 +1,18 @@
 # Zod
 
-TypeScript doesn't exist at compile-time. So what if your app accepts input at runtime? How do you assure runtime data matches your expectations?
+TypeScript doesn't exist at runtime. So how do you assure runtime data is compatible with your types?
 
-There are a variety of libraries that can validate runtime data, and generate corresponding TypeScript types. Some of the most popular ones are:
+For that, you can use a runtime validation library. These libraries help you validate data at runtime, ensuring it matches the expected structure and types.
+
+There are a variety of libraries that can validate runtime data, and generate corresponding TypeScript types. Three of the most popular are:
 
 - Zod
 - ArkType
-- Yup
-- io-ts
 - Valibot
-- Superstruct
 
 In fact, there's a standard for this called [Standard Schema](https://github.com/standard-schema/standard-schema?tab=readme-ov-file#what-schema-libraries-implement-the-spec) that many of these libraries follow. This standard defines a common way to describe and validate data structures, making it easier to work with different libraries. [Many popular tools](https://github.com/standard-schema/standard-schema?tab=readme-ov-file#what-schema-libraries-implement-the-spec) can work with any library that follows this standard.
 
-In this course, we'll use Zod. It's very popular and easy to use.
+In this course, we'll use Zod. It's popular and easy to use.
 
 Zod is a TypeScript-first schema declaration and validation library. It ensures your data is correct at runtime.
 
@@ -41,17 +40,18 @@ const user = userSchema.parse({
 });
 ```
 
-Zod is helpful anytime you're dealing with runtime data. Examples include:
+Zod is helpful anytime you want to validate runtime data such as:
 
-- API requests
+- API responses
 - Form submissions
 - Database queries
-- Configuration files
+- Config files
+- Environment variables
 - User input
 - URL parameters
 - JSON files
 
-TypeScript has no idea what data will be at runtime. Zod helps you ensure that data is correct, at runtime.
+TypeScript has no idea what all this data will be at runtime. Zod ensures the data is correct, at runtime.
 
 ## Features
 

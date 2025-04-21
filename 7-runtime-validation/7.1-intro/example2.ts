@@ -12,3 +12,5 @@ const user = v.parse(userSchema, {
   name: "John Doe",
   age: 42,
 });
+
+type User = v.InferOutput<typeof userSchema>; // Infer the type from the schema

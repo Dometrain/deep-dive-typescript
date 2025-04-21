@@ -18,3 +18,5 @@ if (result instanceof type.errors) {
   console.log(result);
   console.log("success");
 }
+
+type User = typeof userType.infer; // Infer the type from the schema

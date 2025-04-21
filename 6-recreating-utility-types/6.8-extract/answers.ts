@@ -1,5 +1,6 @@
 // Exercise: Create a utility type called `MyExtract` that
-// accepts a union type and returns a new union type that includes only the specified members.
+// accepts a union type and returns a new union type that includes
+// only the specified members.
 // Accept two generic arguments:
 // 1. `T` - The target type
 // 2. `U` - The union of items to extract from the target

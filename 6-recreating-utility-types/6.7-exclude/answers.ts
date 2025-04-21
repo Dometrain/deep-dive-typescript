@@ -4,7 +4,7 @@
 // 2. `U` - One or more items in `T` to exclude
 
 // 1. Accept a target type called `T`, and a union of keys in the type, called `U`.
-// 2. Iterate over each member in `T` - if the member is in `U`, exclude it (via `never`).
+// 2. Iterate over each member in `T` - if the member is in `U`, exclude it.
 // Remember: In conditional types, if T is a union, TS "distributes"
 // (loops over) the condition across each member of that union.
 type MyExclude<T, U> = T extends U ? never : T;

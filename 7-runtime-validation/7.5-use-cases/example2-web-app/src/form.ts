@@ -28,7 +28,7 @@ export function setupForm(form: HTMLFormElement) {
 
     if (!result.success) {
       // Show error messages
-      result.error.errors.forEach((error) => {
+      result.error.issues.forEach((error) => {
         if (error.path[0] === "username") {
           usernameError.textContent = error.message;
         } else if (error.path[0] === "password") {

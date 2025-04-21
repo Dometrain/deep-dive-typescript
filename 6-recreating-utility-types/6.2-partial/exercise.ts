@@ -2,4 +2,4 @@
 
 // Test
 // type User = { id: number; name: string };
-// const partialUser: MyPartial<User> = {}; // Valid, since all properties are optional
+// const partialUser: MyPartial<User> = {}; // Valid. All properties are optional

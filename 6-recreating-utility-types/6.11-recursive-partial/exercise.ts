@@ -1,4 +1,5 @@
-// Exercise: Create a type utility called `RecursivePartial` that recursively marks all child object properties as optional.
+// Exercise: Create a type utility called `RecursivePartial` that recursively
+// marks all child object properties as optional.
 
 // Test code
 // type Person = {

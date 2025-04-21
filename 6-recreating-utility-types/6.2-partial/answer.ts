@@ -1,4 +1,5 @@
-// Exercise: Create utility type called `MyPartial` that makes all properties in T optional
+// Exercise: Create utility type called `MyPartial` that
+// makes all properties in T optional
 
 // 1. Iterate over each property in T
 // 2. Make each property optional.
@@ -9,4 +10,4 @@ type MyPartial<T> = {
 
 // Test
 type User = { id: number; name: string };
-const partialUser: MyPartial<User> = {}; // Valid, since all properties are optional
+const partialUser: MyPartial<User> = {}; // Valid. All properties are optional

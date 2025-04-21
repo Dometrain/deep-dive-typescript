@@ -1,4 +1,5 @@
-// Exercise: Create a utility type called `MyNonNullable` that excludes null and undefined from T
+// Exercise: Create a utility type called `MyNonNullable` that excludes null
+// and undefined from T
 
 // 1. For each union member in T, if the member is null or undefined, exclude it.
 // 2. Otherwise, keep it.

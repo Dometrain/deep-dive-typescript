@@ -9,4 +9,5 @@ const data = {
   name: null, // omitted optional age, and set name to null
 };
 
+type Data = z.infer<typeof schema>;
 const result = schema.parse(data); // success

@@ -1,22 +1,20 @@
 # Zod
 
-TypeScript doesn't exist at runtime. So how do you assure runtime data is compatible with your types?
+TypeScript doesn't exist at runtime. So how we assure runtime data is compatible with our types?
 
-For that, you can use a runtime validation library. These libraries help you validate data at runtime, ensuring it matches the expected structure and types.
-
-There are a variety of libraries that can validate runtime data, and generate corresponding TypeScript types. Three of the most popular are:
+For that, we can use a runtime validation library. Three of the most popular are:
 
 - Zod
 - ArkType
 - Valibot
 
-In fact, there's a standard for this called [Standard Schema](https://github.com/standard-schema/standard-schema?tab=readme-ov-file#what-schema-libraries-implement-the-spec) that many of these libraries follow. This standard defines a common way to describe and validate data structures, making it easier to work with different libraries. [Many popular tools](https://github.com/standard-schema/standard-schema?tab=readme-ov-file#what-schema-libraries-implement-the-spec) can work with any library that follows this standard.
+In fact, there's a standard for this called [Standard Schema](https://github.com/standard-schema/standard-schema?tab=readme-ov-file#what-schema-libraries-implement-the-spec) that these libraries follow. This standard defines a common way to describe and validate data structures, making it easier to work with different libraries. [Many popular tools](https://github.com/standard-schema/standard-schema?tab=readme-ov-file#what-schema-libraries-implement-the-spec) can work with any library that follows this standard.
 
-In this course, we'll use Zod. It's popular and easy to use.
+We'll use Zod. It's popular and easy to use.
 
-Zod is a TypeScript-first schema declaration and validation library. It ensures your data is correct at runtime.
+Zod is a TypeScript-first schema declaration and validation library. It ensures your data is correct at runtime, and we can generate TypeScript types from it too.
 
-Zod isn't part of TypeScript. It's a separate library. But it's designed to work well with TypeScript. It's a great way to ensure your data is correct at runtime.
+Zod isn't part of TypeScript. It's a separate library. But it's designed to work well with TypeScript. It's a great way to ensure your data is correct at runtime, and I find it's so essential that I use it in all my TypeScript projects.
 
 ## Installation
 

@@ -9,7 +9,7 @@ import * as z from "zod";
 // - email: a string that must be a valid email address
 // - isAdmin: a boolean
 
-// Question 2: Create a Zod schema for an array of users using the user schema defined above.
+// Question 2: Create a Zod schema for an array of employees using the employee schema defined above.
 
 // Question 3: Create a Zod schema representing a company with the following properties:
 // - companyId: a string

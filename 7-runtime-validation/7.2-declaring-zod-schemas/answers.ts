@@ -17,6 +17,8 @@ const employeeSchema = z.object({
   inAdmin: z.boolean(),
 });
 
+type Employee = z.infer<typeof employeeSchema>;
+
 // Question 2: Create a Zod schema for an array of users using the user schema defined above.
 
 const employeesSchema = z.array(employeeSchema);

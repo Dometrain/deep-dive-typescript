@@ -11,14 +11,15 @@ type Meter = number & { unitOfMeasure: "meter" };
 declare const meterSymbol: unique symbol;
 type Meter = number & { [meterSymbol]: void };
 
-// Option 4: ts-brand library
+// Option 4: Zod library
+import * as z from "zod";
+const Meter = z.number().brand<"Meter">();
+
+// Option 5: ts-brand library
 import { Brand } from "ts-brand";
 type Meter = Brand<number, "meter">;
 
-// Option 5: effect library
+// Option 6: effect library
 import { Brand } from "effect";
 type Meter = number & Brand.Brand<"Meter">;
-
-// Option 6: Zod
-const Meter = z.number().brand<"Meter">();
 ```

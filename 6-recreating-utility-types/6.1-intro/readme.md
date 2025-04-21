@@ -1,9 +1,9 @@
 # Recreating utility types
 
-I have a theory: A great way to truly learn advanced TypeScript is to implement a few of TypeScript's built-in utility types. So in this module, we'll create our own implementation of a few of the utility types that we learned in a previous section.
+I have a theory - the best way to truly understand what we've covered so far is to practice.
 
-So think of this module as practice for many of the new concepts we've learned so far related to generics, mapped types and modifiers, conditional types, and more. At the end of this module, you'll understand how TypeScript's utility types work under the hood.
+And a great way to practice is to implement a few of TypeScript's built-in utility types. So, in this module, we'll create our own implementation of a few of the utility types that we used earlier in the course.
 
-Of course, throughout this module, you can cheat by looking at the TypeScript source code. But I encourage you to try to implement these utility types yourself first, and then I'll walk through TypeScript's implementation so you can practice reading mapped types, and understand TypeScript's built-in types work.
+Along the way, we'll practice the new concepts we've learned including generics, mapped types, modifiers, conditional types, and more. At the end of this module, you'll understand how TypeScript's built-in utility types work.
 
-And I'll close out the module with a short challenge to create a new utility type that expands the functionality of a built-in utility type. So let's get started!
+So, here's the plan: I'll propose an exercise where you try to implement a utility type first. Then I'll walk through TypeScript's implementation so you can see how to read existing types, and understand how TypeScript's built-in types work.

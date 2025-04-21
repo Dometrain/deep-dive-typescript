@@ -1,5 +1,5 @@
 // Assure env variables are set and have the correct type via Zod
-import { z } from "zod";
+import * as z from "zod";
 
 const environmentSchema = z.object({
   VITE_ENVIRONMENT: z.enum(["development", "production"]),

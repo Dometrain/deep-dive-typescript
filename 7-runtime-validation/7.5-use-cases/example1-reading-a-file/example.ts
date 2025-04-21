@@ -1,11 +1,11 @@
 // Validate a file's content using Zod
-import { z } from "zod";
+import * as z from "zod";
 import { readFileSync } from "fs";
 
 const personSchema = z.object({
   name: z.string(),
-  age: z.number().int().positive(),
-  email: z.string().email(),
+  age: z.int().positive(),
+  email: z.email(),
 });
 
 const parsedJson = JSON.parse(readFileSync("./people.json", "utf-8"));

@@ -1,5 +1,5 @@
 // Validating API response with Zod
-import { z } from "zod";
+import * as z from "zod";
 import { env } from "./environment";
 
 const productsSchema = z.object({

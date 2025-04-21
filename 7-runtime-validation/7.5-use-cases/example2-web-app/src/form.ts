@@ -1,5 +1,5 @@
 // Form validation with Zod
-import { z } from "zod";
+import * as z from "zod";
 
 // Imagine we have a form with a username and password
 const formSchema = z.object({

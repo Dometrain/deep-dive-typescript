@@ -5,19 +5,19 @@ Zod isn't just special because it exists at runtime. It's also more powerful tha
 ## Complex schema that TypeScript can't express
 
 ```ts
-
-import { z } from "zod";
+import * as z from "zod";
 
 const contactFormSchema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
   message: z.string(),
   phone: z.string().optional(),
-  terms: z.boolean().refine(value => value === true, {
+  terms: z.boolean().refine((value) => value === true, {
     message: "You must accept the terms",
   }),
   newsletter: z.boolean().optional(),
-  age: z.number().min(0).max(150).
+  age: z.number().min(0).max(150),
+});
 ```
 
 In this example, we have a complex schema. It has many constraints. It's not just a type. It's a type with rules. TypeScript can't express this. But Zod can.

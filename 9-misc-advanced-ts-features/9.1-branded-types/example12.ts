@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 const Cat = z.object({ name: z.string() }).brand<"Cat">();
 type Cat = z.infer<typeof Cat>;

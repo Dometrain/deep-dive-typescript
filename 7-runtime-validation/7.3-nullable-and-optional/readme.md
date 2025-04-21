@@ -3,7 +3,7 @@
 Zod supports optional values using the `zod.optional` method, and null values via `zod.nullable`.
 
 ```ts
-import { z } from "zod";
+import * as z from "zod";
 
 const schema = z.object({
   name: z.nullable(z.string()),

@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 // Exercise: Testing Your Knowledge of Zod
 

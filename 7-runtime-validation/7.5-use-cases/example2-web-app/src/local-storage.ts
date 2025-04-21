@@ -1,5 +1,5 @@
 // Validating localStorage values with Zod
-import { z } from "zod";
+import * as z from "zod";
 
 const counterSchema = z.coerce.number().min(0).max(100);
 

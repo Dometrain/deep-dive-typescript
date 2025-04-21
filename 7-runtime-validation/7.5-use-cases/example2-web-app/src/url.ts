@@ -1,5 +1,5 @@
 // URL parameter validation via Zod
-import { z } from "zod";
+import * as z from "zod";
 
 const productIdSchema = z.coerce.number().positive(); // Tell Zod to coerce the productId in the URL to a numeric value
 

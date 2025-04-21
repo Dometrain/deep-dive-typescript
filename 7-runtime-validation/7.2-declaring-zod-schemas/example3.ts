@@ -1,16 +1,33 @@
 import * as z from "zod";
 
-// Numbers
-z.number().gt(5);
-z.number().gte(5); // alias .min(5)
-z.number().lt(5);
-z.number().lte(5); // alias .max(5)
+// Strings
+z.string().max(5);
+z.string().min(5);
+z.string().length(5);
+z.string().regex(/^[0-9]+$/);
+z.string().includes("string");
+z.string().startsWith("string");
+z.string().endsWith("string");
 
-z.int(); // value must be an integer
+// String-related methods
+z.email();
+z.url();
+z.emoji();
+z.uuid();
+z.nanoid();
+z.cuid();
+z.cuid2();
+z.ulid();
+z.ipv4();
+z.base64();
 
-z.number().positive(); //     > 0
-z.number().nonnegative(); //  >= 0
-z.number().negative(); //     < 0
-z.number().nonpositive(); //  <= 0
+// Date and time
+z.iso.datetime(); // ISO 8601; by default only `Z` timezone allowed
+z.iso.date(); // ISO date format (YYYY-MM-DD)
+z.iso.time(); // ISO time format (HH:mm:ss[.SSSSSS])
+z.iso.duration(); // ISO 8601 duration
 
-z.number().multipleOf(5); // Evenly divisible by 5. Alias .step(5)
+// Transforms
+z.string().trim(); // trim whitespace
+z.string().toLowerCase(); // toLowerCase
+z.string().toUpperCase(); // toUpperCase

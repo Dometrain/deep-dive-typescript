@@ -1,7 +1,5 @@
-// Arrays
+// Enums
 import * as z from "zod";
 
-const stringArray = z.array(z.string());
-
-// equivalent
-const stringArray2 = z.string().array();
+const FishEnum = z.enum(["Salmon", "Tuna", "Trout"]);
+type FishEnum = z.infer<typeof FishEnum>;

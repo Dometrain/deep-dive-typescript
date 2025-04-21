@@ -1,20 +1,13 @@
 import * as z from "zod";
 
-// primitive values
-z.string();
-z.number();
-z.bigint();
-z.boolean();
-z.date();
-z.symbol();
-
-// empty
-z.undefined();
-z.null();
-
-// catch-all
-z.any();
-z.unknown();
-
-// never
-z.never();
+const contactFormSchema = z.object({
+  name: z.string().min(2),
+  email: z.email(),
+  message: z.string(),
+  phone: z.string().optional(),
+  terms: z.boolean().refine((value) => value === true, {
+    message: "You must accept the terms",
+  }),
+  newsletter: z.boolean().optional(),
+  age: z.number().min(0).max(150),
+});

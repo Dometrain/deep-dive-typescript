@@ -4,7 +4,7 @@ import { readFileSync } from "fs";
 
 const personSchema = z.object({
   name: z.string(),
-  age: z.int().positive(),
+  age: z.number().gt(0).lt(120),
   email: z.email(),
 });
 

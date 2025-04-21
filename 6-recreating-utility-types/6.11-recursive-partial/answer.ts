@@ -2,7 +2,7 @@
 
 // 1. Iterate over each property in T
 // 2. Make each property optional.
-// 3. If the property is an object, recursively call RecursivePartial.
+// 3. If the property is an object, call RecursivePartial (recursion).
 // 4. Keep the type of the property the same.
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends object ? RecursivePartial<T[P]> : T[P];

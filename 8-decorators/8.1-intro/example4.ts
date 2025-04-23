@@ -1,5 +1,5 @@
 // Log all the things via decorators
-// NOTE: Using broad types like DecoratorContext below for simplicity.
+// NOTE: Using broad DecoratorContext type below for simplicity.
 
 // Decoration invocation order:
 // 1. Static Method

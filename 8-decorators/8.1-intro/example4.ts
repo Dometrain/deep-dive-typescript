@@ -5,7 +5,6 @@
 // 1. Static Method
 // 2. Getter
 // 3. Setter
-// 4. Accessor
 // 5. Plain Method
 // 6. Field
 // 7. Class
@@ -29,9 +28,6 @@ class MyClass {
     this._field = value;
   }
 
-  @logAccessorMetadata
-  accessor field2 = "value2";
-
   @logMethodMetadata
   static staticMethod() {
     console.log("MyClass static method");
@@ -51,16 +47,6 @@ function logClassMetadata(value: Constructor, context: DecoratorContext) {
   console.log("Class name: ", context.name);
   console.log("Class kind: ", context.kind);
   console.log("Class metadata: ", context.metadata);
-}
-
-function logAccessorMetadata(
-  value: { get: Function; set: Function },
-  context: DecoratorContext
-) {
-  console.log("Accessor value: ", value);
-  console.log("Accessor name: ", context.name);
-  console.log("Accessor kind: ", context.kind);
-  console.log("Accessor metadata: ", context.metadata);
 }
 
 function logMethodMetadata(value: Function, context: DecoratorContext) {

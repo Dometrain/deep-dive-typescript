@@ -18,6 +18,6 @@
   },
   "exclude": [
     "1-ready-to-record/7-runtime-validation-via-zod/7.6-use-cases/example2-web-app",
-    "14-example-apps"
+    "13-example-apps"
   ]
 }

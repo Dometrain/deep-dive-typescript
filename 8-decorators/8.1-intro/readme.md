@@ -14,6 +14,7 @@ Note: Bun doesn't support decorators - it ignores them. So, we need to compile t
 # Why decorators?
 
 Decorators are useful for cross-cutting concerns. When you find you want to apply some logic or enhancements in many spots, decorators can help.
+
 Cross-cutting concerns are aspects of a program that affect multiple modules or layers of the application. They are often related to functionality that is not part of the main business logic but is still important for the overall operation of the application. Examples of cross-cutting concerns include:
 
 - Logging
@@ -37,21 +38,11 @@ A decorator is a keyword that starts with an @ symbol and can be put in front of
 
 In summary, metaprogramming (programming the program).
 
-When decorators are called, they receive two parameters:
+Decorators receive two parameters:
 
 1. The decorated value, or `undefined` for class fields.
 2. A context object containing information about the decorated value, such as its name, type, and the class it belongs to.
 
 # Who are decorators for?
 
-Decorators are for libraries and frameworks that want to provide a way to extend or modify the behavior of classes and class members. They allow developers to create reusable code that can be applied to different classes and class members without modifying the original code. They're primarily implemented by library authors. Library consumers can use decorators to add functionality to their classes and class members without having to modify the original code. Since decorators are used with classes, they're primarily an OO feature. Open source JS libraries like Angular and NestJS use decorators.
-
-# Why Not Decorators?
-
-- Not stable yet (stage 3)
-- Generate a lot of code
-- Can be hard to type
-- Must use classes to use decorators (in functional paradigms, would just use function composition)
-- Can make it harder to understand the program's flow - may introduce side effects and dependencies that are not immediately visible.
-- Can make it harder to read, test, and debug code, as they can obscure the original structure and behavior of the decorated values.
-- Can lead to performance issues, as decorators add overhead
+Decorators extend or modify the behavior of classes and class members. They allow developers to create reusable code that can be applied to different classes and class members without modifying the original code. They're primarily implemented by library authors. Library consumers can use decorators to add functionality to their classes and class members without having to modify the original code. Since decorators are used with classes, they're primarily an OO feature. Open source JS libraries like Angular and NestJS use decorators.

@@ -12,11 +12,13 @@
 @logClassMetadata
 class MyClass {
   @logFieldMetadata
-  private _field = "value";
-  private _field2 = null;
+  private _field1: number;
+  private _field2: string;
 
-  constructor() {
+  constructor(field1: number, field2: string) {
     console.log("MyClass constructor");
+    this._field1 = field1;
+    this._field2 = field2;
   }
 
   @logGetterMetadata
@@ -25,8 +27,8 @@ class MyClass {
   }
 
   @logSetterMetadata
-  set field(value: string) {
-    this._field = value;
+  set field1(value: number) {
+    this._field1 = value;
   }
 
   @logAccessorMetadata
@@ -43,7 +45,7 @@ class MyClass {
   }
 }
 
-const obj = new MyClass();
+const obj = new MyClass(1, "value");
 
 type Constructor<T = {}> = new (...args: any[]) => T;
 

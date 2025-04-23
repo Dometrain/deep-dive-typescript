@@ -2,8 +2,7 @@
 
 // Uses:
 // Changing/enhancing field initialization logic
-// Implementing read-only fields
-// Dependency injection
+// Validating field values
 
 function addOne<T>(target: T, context: ClassFieldDecoratorContext<T, number>) {
   return function (this: T, value: number) {

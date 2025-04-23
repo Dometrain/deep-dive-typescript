@@ -4,21 +4,18 @@
 // 1. Static Method
 // 2. Getter
 // 3. Setter
-// 4. Accessor
-// 5. Plain Method
-// 6. Field
-// 7. Class
-// 8. Constructor
+// 4. Plain Method
+// 5. Field
+// 6. Class
+// 7. Constructor
 @logClassMetadata
 class MyClass {
   @logFieldMetadata
   private _field1: number;
-  private _field2: string;
 
-  constructor(field1: number, field2: string) {
+  constructor(field1: number) {
     console.log("MyClass constructor");
     this._field1 = field1;
-    this._field2 = field2;
   }
 
   @logGetterMetadata
@@ -31,9 +28,6 @@ class MyClass {
     this._field1 = value;
   }
 
-  @logAccessorMetadata
-  accessor field2 = "value2";
-
   @logMethodMetadata
   static staticMethod() {
     console.log("MyClass static method");
@@ -45,7 +39,7 @@ class MyClass {
   }
 }
 
-const obj = new MyClass(1, "value");
+const obj = new MyClass(1);
 
 type Constructor<T = {}> = new (...args: any[]) => T;
 
@@ -53,18 +47,6 @@ function logClassMetadata(value: Constructor, context: ClassDecoratorContext) {
   console.log("Class name: ", context.name);
   console.log("Class kind: ", context.kind);
   console.log("Class metadata: ", context.metadata);
-}
-
-function logAccessorMetadata(
-  value: unknown,
-  context: ClassAccessorDecoratorContext
-) {
-  console.log("Accessor value: ", value);
-  console.log("Accessor name: ", context.name);
-  console.log("Accessor kind: ", context.kind);
-  console.log("Accessor metadata: ", context.metadata);
-  console.log("Accessor private: ", context.private);
-  console.log("Accessor static: ", context.static);
 }
 
 function logMethodMetadata(

@@ -1,4 +1,4 @@
-// 2nd arg is the context object. Using `any` for now to keep example simple
+// Solution: Use a decorator so we can consistently, easily instrument methods
 function log(originalMethod: any, _context: any) {
   function replacementMethod(this: any, ...args: any[]) {
     console.log("LOG: Entering method.");

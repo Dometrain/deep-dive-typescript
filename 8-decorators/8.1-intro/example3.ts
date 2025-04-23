@@ -1,4 +1,4 @@
-// Can import a decorator from another file. Auto-import works like regular methods too.
+// Can import a decorator from another file.
 import { log } from "../log";
 
 class Person {
@@ -7,6 +7,7 @@ class Person {
     this.name = name;
   }
 
+  // Auto-import works like regular methods too.
   @log
   greet() {
     console.log(`Hi, I'm ${this.name}.`);

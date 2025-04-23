@@ -1,3 +1,5 @@
+// Why decorators?
+
 class Person {
   name: string;
   constructor(name: string) {

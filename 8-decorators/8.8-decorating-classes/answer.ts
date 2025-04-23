@@ -10,7 +10,7 @@ class Person {
   ) {}
 }
 
-function LogClass(target: Function) {
+function LogClass(target: Function, _context: ClassDecoratorContext) {
   console.log(`Class defined: ${target.name}`);
 }
 

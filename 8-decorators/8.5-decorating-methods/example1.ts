@@ -6,37 +6,28 @@
 // Enhancing behavior
 // Performance monitoring
 
-// Tip: cmd+click on ClassMethodDecoratorContext, then search for DecoratorContext< to see all 6 options
-function log<This, Args extends any[], Return>(
+// Log method performance
+function measure<This, Args extends any[], Return>(
   originalMethod: (this: This, ...args: Args) => Return,
-  context: ClassMethodDecoratorContext<
-    This,
-    (this: This, ...args: Args) => Return
-  >
+  // This assures the decorator is only used as a method decorator
+  _context: ClassMethodDecoratorContext
 ) {
-  const methodName = String(context.name);
-
-  function replacementMethod(this: This, ...args: Args): Return {
-    console.log(`LOG: Entering method '${methodName}'.`);
-    const result = originalMethod.call(this, ...args); // Must invoke, since this function replaces the original
-    console.log(`LOG: Exiting method '${methodName}'.`);
+  function replacementFunction(this: This, ...args: Args): Return {
+    const start = performance.now();
+    const result = originalMethod.call(this, ...args);
+    const end = performance.now();
+    console.log(`Execution time: ${end - start} milliseconds`);
     return result;
   }
-
-  return replacementMethod;
+  return replacementFunction;
 }
 
 class Person {
-  name: string;
-  constructor(name: string) {
-    this.name = name;
-  }
-
-  @log
-  greet(this: Person): void {
-    console.log(`Hello, my name is ${this.name}.`);
+  @measure
+  greet() {
+    console.log("Hi!");
   }
 }
 
-const p = new Person("Ron");
-const greet = p.greet();
+const person = new Person();
+person.greet(); // Logs "Hi!" and the execution time

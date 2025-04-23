@@ -12,7 +12,8 @@ function lazy<This, Return>(
   return function (this: This): Return {
     const value = target.call(this);
     console.log("calling lazy getter");
-    Object.defineProperty(this, context.name, { value, enumerable: true }); // Mark enumerable so it's not re-evaluated
+    // Mark enumerable so it's not re-evaluated
+    Object.defineProperty(this, context.name, { value, enumerable: true });
     return value;
   };
 }

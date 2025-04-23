@@ -8,4 +8,4 @@ class MyClass {
 }
 
 const obj = new MyClass();
-console.log(obj.x); // 9
+console.log(obj.x);

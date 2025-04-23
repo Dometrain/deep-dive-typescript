@@ -5,10 +5,10 @@
 // 1. Static Method
 // 2. Getter
 // 3. Setter
-// 5. Plain Method
-// 6. Field
-// 7. Class
-// 8. Constructor
+// 4. Plain Method
+// 5. Field
+// 6. Class
+// 7. Constructor
 @logClassMetadata
 class MyClass {
   @logFieldMetadata

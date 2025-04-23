@@ -8,6 +8,8 @@ const personSchema = z.object({
   email: z.email(),
 });
 
+type Person = z.infer<typeof personSchema>;
+
 const parsedJson = JSON.parse(readFileSync("./people.json", "utf-8"));
 const people = personSchema.array().parse(parsedJson);
 console.log("Parsed data:", people);

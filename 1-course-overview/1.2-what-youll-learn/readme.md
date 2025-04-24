@@ -10,7 +10,7 @@ We'll use TypeScript's built-in utility types to generate new types, and explore
 
 We'll create new types from existing types using advanced features like mapped types, string literal types, conditional types, and more.
 
-TypeScript doesn't exist at compile time, so we'll explore how to implement runtime validation schemas to validate data at runtime, and how to infer your TypeScript types so you can enjoy both compile-time and runtime safety.
+TypeScript doesn't exist at compile time, so we'll explore how to implement runtime validation schemas to validate and strongly type your runtime data such as URL parameters, environment variables, form inputs,and API responses. And I'll show how to infer your TypeScript types from runtime schemas so you can enjoy both compile-time and runtime safety.
 
 We'll explore using TypeScript in the real world by reviewing example applications that use popular libraries like React, Express, and Node.js.
 

@@ -1,3 +1,5 @@
+// Declaring complex object type
+
 /**
  * @typedef {Object} Car - creates a new type named 'Car'. Lowercase `object` works too.
  * @property {number} prop1 - required number

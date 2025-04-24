@@ -1,3 +1,4 @@
+// Can annotate classes too
 class DataProcessor {
   /**
    * @param {number} data
@@ -9,10 +10,6 @@ class DataProcessor {
     // or set explicitly
     /** @type {string | null} */
     this.goal = null;
-
-    // or annotated if set elsewhere
-    /** @type {number} */
-    // this.threads;
 
     this.initialize(data);
   }

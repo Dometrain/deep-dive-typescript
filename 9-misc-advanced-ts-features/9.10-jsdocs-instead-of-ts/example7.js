@@ -1,3 +1,5 @@
+// Declare generics via @template
+
 /**
  * @template T
  * @param {T} x - A generic param that flows through to the return type

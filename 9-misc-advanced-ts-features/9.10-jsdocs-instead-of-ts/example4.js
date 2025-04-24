@@ -1,4 +1,4 @@
-// Parameters can be declared in many ways
+// Function params can be declared in many ways
 /**
  * @param {string}  p1 - A string param.
  * @param {string=} p2 - An optional param (Google Closure syntax)

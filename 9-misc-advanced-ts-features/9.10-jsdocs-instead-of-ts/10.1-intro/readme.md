@@ -1,10 +1,12 @@
 # Intro
 
-Problem: You'd like you use type-checking in your JavaScript code, but you want to stick with plain JS files so you don't have to compile your code before you run it in the browser.
+Problem: You'd like to have types in your plain JavaScript code.
 
 Solution: Use JSDoc comments to declare types instead.
 
-For example, imagine I have a plain JS file like this:
+I hesitate to even mention this feature, since I don't generally recommend it, but it's important you at least know it exits.
+
+You can use JSDoc comments to add type annotations to your JavaScript code. This is a way to get some of the benefits of TypeScript in plain .js files.
 
 ```js
 function add(a, b) {
@@ -35,7 +37,9 @@ function add(a: number, b: number): number {
 }
 ```
 
-JSDoc only uses comments so that it can be run in any JavaScript environment. The comments are just ignored by any JavaScript engine that doesn't understand them.
+So why do this? Well, JSDoc only uses comments so that it can be run in any JavaScript environment. The comments are just ignored by any JavaScript engine that doesn't understand them. So the benefit is your files stay plain JS, so you don't have to compile your code before you run it.
+
+For example, imagine I have a plain JS file like this:
 
 To check specific files, put a comment at the top of the file:
 
@@ -61,4 +65,4 @@ Some alternative JSDoc syntax is inspired by Google Closure.
 
 # Tradeoffs
 
-The downside of using JSDoc is that the syntax is more verbose than TypeScript, and it's not directly inline in the code, so it's a little harder to read. There are also multiple ways to declare types, which it can be confusing and lead to inconsistency.
+The downside of using JSDoc is that the syntax is more verbose than TypeScript, and it's not directly inline in the code, so it's harder to read. There are also multiple ways to declare types, which it can be confusing and lead to inconsistency.

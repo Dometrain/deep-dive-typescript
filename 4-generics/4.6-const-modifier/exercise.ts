@@ -1,6 +1,7 @@
-// Exercise 1: Create a `filterAdmins` function that accepts an array of objects with a role property of type string,
-// and returns an array of objects that have a `role` property of `admin`.
-// Use the const modifier in the type argument so that the function returns an array of readonly objects.
+// Exercise 1: Create a `filterAdmins` function that accepts an array of objects
+// with a role property of type string, and returns an array of objects that have a `role` property
+// of `admin`. Use the const modifier in the type argument so that the function returns an array
+// of readonly objects.
 
 // const admins = filterAdmins([
 //   {

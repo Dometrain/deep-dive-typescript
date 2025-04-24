@@ -1,6 +1,6 @@
 // Returning `never` in a conditional type omits the union member
 
-type Extract<T, U> = T extends U ? T : never; // Copy of TypeScript's Extract utility type - just here for reference
+type Extract<T, U> = T extends U ? T : never; // Copy of TypeScript's Extract utility type for reference
 
 type Vehicle = "car" | "truck" | "bicycle";
 

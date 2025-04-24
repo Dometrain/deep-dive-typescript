@@ -1,26 +1,8 @@
-// Exercise: Equality Narrowing in TypeScript
-
-// Question 1:
-// Write a function `isNullOrUndefined` that takes a parameter `value` of type `string | null | undefined`.
-// Use equality narrowing to check if the value is either null or undefined and return a boolean.
-
-function isNullOrUndefined(value: string | null | undefined): boolean {
-  return value === null || value === undefined;
-}
-
-// Question 2:
-// Write a function `isTruthy` that takes a parameter `value` of type `string | number | boolean | null | undefined`.
-// Use equality narrowing to check if the value is truthy and return a boolean.
-// Hint: It's truthy if it's not falsey.
-
-function isTruthy(
-  value: string | number | boolean | null | undefined
-): boolean {
-  return (
-    value !== null &&
-    value !== undefined &&
-    value !== false &&
-    value !== 0 &&
-    value !== ""
-  );
+// Question 1: Given the function below, log x and y if they are equal.
+// Note the types of x and y after the equality check.
+function logIfEqual(x: string | number, y: number | boolean) {
+  if (x === y) {
+    // We can now call any 'number' method on 'x' or 'y'.
+    console.log(x, y);
+  }
 }

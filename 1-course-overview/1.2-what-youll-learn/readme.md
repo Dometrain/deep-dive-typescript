@@ -10,10 +10,8 @@ We'll use TypeScript's built-in utility types to generate new types, and explore
 
 We'll create new types from existing types using advanced features like mapped types, string literal types, conditional types, and more.
 
-TypeScript doesn't exist at compile time, so we'll explore how to use Zod to validate our data at runtime, and how to use it to infer your TypeScript types so you can enjoy both compile-time and runtime safety.
+TypeScript doesn't exist at compile time, so we'll explore how to implement runtime validation schemas to validate data at runtime, and how to infer your TypeScript types so you can enjoy both compile-time and runtime safety.
 
-And we'll use other advanced features like decorators, template literal types, and more.
+We'll explore using TypeScript in the real world by reviewing example applications that use popular libraries like React, Express, and Node.js.
 
-We'll also explore using TypeScript in the real world by reviewing a fullstack TypeScript app that uses Node, Express, and React, and shares types between the frontend and backend.
-
-Finally, I'll close out the course with recommended next steps including TypeScript performance and debugging tips, key third-party libraries, and resources for practices your newfound skills.
+Finally, I'll close out the course with recommended next steps including TypeScript performance and debugging tips, key third-party libraries, and resources for practicing your newfound skills.

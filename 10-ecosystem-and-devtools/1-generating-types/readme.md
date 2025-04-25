@@ -1,8 +1,8 @@
 # Generating or Inferring Types
 
-If you have a REST or GraphQL API, creating TypeScript types can be a tedious task. The good news is, you may not need to create your types manually. You can generate types via tools.
+If you have many REST or GraphQL APIs, manually creating TypeScript types can be a lot of work. The good news is, you may not need to create your types manually. You can generate types via tools.
 
-Here's a few to consider:
+Here's a few options to consider:
 
 ## Database-to-TypeScript Tools
 

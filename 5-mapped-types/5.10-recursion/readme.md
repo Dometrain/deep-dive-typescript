@@ -1,6 +1,6 @@
 # Recursion
 
-A mapped type can be recursive, meaning that it can refer to itself in its definition. This is useful for creating complex data structures like trees or linked lists.
+A mapped type can be recursive, meaning that it can refer to itself in its definition. This is useful for creating complex data structures like trees or linked lists, or for handling nested objects.
 
 # Example: Recursive Mapped Type
 

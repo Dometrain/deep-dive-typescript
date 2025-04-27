@@ -8,6 +8,17 @@ type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends object ? RecursivePartial<T[P]> : T[P];
 };
 
+// Or, more complex implementation with support for array and function properties.
+type DeepPartial<T> = T extends any[]
+  ? {
+      [K in keyof T]: T[K] extends Function ? T[K] : DeepPartial<T[K]>;
+    }
+  : T extends object
+    ? {
+        [K in keyof T]?: T[K] extends Function ? T[K] : DeepPartial<T[K]>;
+      }
+    : T;
+
 type Person = {
   name: string;
   age: number;

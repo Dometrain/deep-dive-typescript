@@ -40,7 +40,7 @@ const user: DeepReadonly<User> = {
 // user.emails[0].email = "a@b.com"; // Error: Cannot assign to 'email' because it is a read-only property
 // user.address.city = "Los Angeles"; // Error: Cannot assign to 'city' because it is a read-only property
 
-// Exercise 2: Create a recursive type to extract all keys from a nested object
+// Exercise 2: Create a recursive type called `NestedKeys` that creates a union all keys from a nested object
 
 // Example type with nested properties
 type Person = {

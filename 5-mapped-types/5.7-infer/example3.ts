@@ -9,5 +9,3 @@ type UnwrapPromise<T> = T extends Promise<infer U> ? U : never;
 const numberPromise = Promise.resolve(42);
 type Result = UnwrapPromise<typeof numberPromise>; // `number`
 type Result2 = UnwrapPromise<Promise<string>>; // `string`
-
-type T = ReturnType<() => number>; // number

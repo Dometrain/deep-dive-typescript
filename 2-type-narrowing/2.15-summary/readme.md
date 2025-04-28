@@ -1,6 +1,6 @@
 # Summary
 
-We just explored 14 ways to narrow a type.
+We just explored 13 ways to narrow a type.
 
 This table shows an example of each, and describes how each works.
 
@@ -20,4 +20,4 @@ This table shows an example of each, and describes how each works.
 | 12. Type assertions                           | `const value = someValue as string`                                    | Treat a value as a specific type, **dangerously**.                             |
 | 13. Non-null assertion                        | `const value = someValue!`                                             | Tell TypeScript that a value is not null or undefined, **dangerously**.        |
 
-Also, there are many third-party libraries that assist with type narrowing at runtime including Zod, Valibot, tiny-invariant, typia, and io-ts. We'll explore Zod later - it's the most popular choice for runtime validation.
+Also, there are many third-party libraries that assist with validation and type narrowing at runtime including Zod, Valibot, ArkType, and tiny-invariant. We'll explore Zod later - it's the most popular choice for runtime validation.

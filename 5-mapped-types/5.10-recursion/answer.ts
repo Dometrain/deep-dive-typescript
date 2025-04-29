@@ -39,22 +39,3 @@ const user: DeepReadonly<User> = {
 // user.emails.push({ email: "test@a.com", type: "work" }); // Error: Property 'push' does not exist on type 'readonly string[]'
 // user.emails[0].email = "a@b.com"; // Error: Cannot assign to 'email' because it is a read-only property
 // user.address.city = "Los Angeles"; // Error: Cannot assign to 'city' because it is a read-only property
-
-// Exercise 2: Create a recursive type called `NestedKeys` that creates a union all keys from a nested object
-
-// Example type with nested properties
-type Person = {
-  name: string;
-  address: {
-    city: string;
-    country: string;
-  };
-};
-
-type NestedKeys<T> = T extends object
-  ? {
-      [K in keyof T]: K | NestedKeys<T[K]>; // Union of key and nested keys
-    }[keyof T] // Extract union of all values in the mapped type
-  : never;
-
-type PersonKeys = NestedKeys<Person>; // "name" | "address" | "city" | "country"

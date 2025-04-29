@@ -1,3 +1,5 @@
+// Changing key names by remapping via `as`
+
 // General structure example
 type MappedTypeExample<Type> = {
   [Keys in keyof Type as KeyType]: Type[Keys];

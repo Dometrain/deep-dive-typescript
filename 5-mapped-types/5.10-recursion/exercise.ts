@@ -3,10 +3,16 @@
 // Example type with nested properties
 type User = {
   name: string;
+  emails: Email[];
   address: {
     city: string;
     country: string;
   };
+};
+
+type Email = {
+  email: string;
+  type: "work" | "personal";
 };
 
 // const user: DeepReadonly<User> = {

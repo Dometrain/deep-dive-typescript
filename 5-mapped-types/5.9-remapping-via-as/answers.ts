@@ -18,13 +18,6 @@ interface Book {
   publishedYear: number;
 }
 
-type LazyBook<T> = {
-  [K in keyof T as `get${Capitalize<string & K>}`]: () => T[K];
-};
-
-// Example usage:
-const lazyBook: LazyBook<Book> = {
-  getTitle: () => "The Great Gatsby",
-  getAuthor: () => "F. Scott Fitzgerald",
-  getPublishedYear: () => 1925,
+type LazyBook = {
+  [K in keyof Book as `get${Capitalize<K>}`]: () => Book[K];
 };

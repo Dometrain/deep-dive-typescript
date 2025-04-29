@@ -19,7 +19,8 @@ type ProductType = typeof product;
 type ProductKeys = keyof ProductType; // "name" | "price" | "inStock"
 
 // Exercise 3: typeof with functions
-// Given the following function and use the `typeof` operator to create a type alias for this function's type.
+// Given the following function and use the `typeof` operator to create
+// a type alias for this function's type.
 
 function calculateDiscount(price: number, discount: number): number {
   return price - price * discount;
@@ -28,7 +29,8 @@ function calculateDiscount(price: number, discount: number): number {
 type CalculateDiscountType = typeof calculateDiscount;
 
 // Exercise 4: typeof with arrays
-// Given the following array, use the `typeof` operator to create a type alias called `ProductCategoriesType`.
+// Given the following array, use the `typeof` operator to create
+// a type alias called `ProductCategoriesType`.
 
 const productCategories = ["Electronics", "Books", "Clothing"];
 

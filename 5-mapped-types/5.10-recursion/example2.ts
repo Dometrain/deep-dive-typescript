@@ -12,7 +12,7 @@ type Person = {
 type AllKeys<T> = T extends object
   ? {
       [K in keyof T]: K | AllKeys<T[K]>; // Union of key and nested keys
-    } // Extract union of all values in the mapped type
+    }[keyof T] // Extract union of all the keys
   : never;
 
 type PersonKeys = AllKeys<Person>; // "name" | "address" | "city" | "country"

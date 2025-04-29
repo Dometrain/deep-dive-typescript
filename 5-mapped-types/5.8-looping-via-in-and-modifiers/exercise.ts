@@ -13,3 +13,10 @@
 // type User = { id: number; name: string; age: number; };
 // type PickedUser = PickProperties<User, "id" | "name">;
 // The resulting type should be: { id: number; name: string; }
+
+// Question 3:
+// Create a mapped type `ReadonlyProperties<T>` that makes all properties of a given type `T` readonly.
+// Example:
+// type User = { id: number; name: string; };
+// type ReadonlyUser = ReadonlyProperties<User>;
+// The resulting type should be: { readonly id: number; readonly name: string; }

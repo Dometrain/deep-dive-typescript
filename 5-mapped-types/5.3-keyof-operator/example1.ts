@@ -1,4 +1,4 @@
-// Problem: You want a union of an object type's keys.
+// Problem: You want a union of a type's keys.
 type Person = { name: string; age: number };
 
 // Solution: keyof.

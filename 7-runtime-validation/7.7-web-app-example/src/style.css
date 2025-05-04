@@ -20,3 +20,9 @@ body {
   font-family: Arial, sans-serif;
   margin: 20px;
 }
+
+details {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: gray;
+}

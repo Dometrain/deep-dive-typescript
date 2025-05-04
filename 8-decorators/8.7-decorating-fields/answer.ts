@@ -4,7 +4,7 @@
 // Use the ClassFieldDecoratorContext to access the class and field name.
 // Apply the decorator to the `name` field in `MyClass`.
 function maxLength<T>(
-  target: undefined,
+  target: T,
   context: ClassFieldDecoratorContext<T, string>
 ) {
   return function (this: T, value: string) {

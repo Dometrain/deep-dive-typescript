@@ -2,15 +2,15 @@
   "products": [
     {
       "id": "1",
-      "name": "Product 1",
-      "price": 100,
-      "description": "Description of Product 1"
+      "name": "Qwerty Keyboard",
+      "price": 55,
+      "descriptio": "Mechanical Keyboard"
     },
     {
       "id": "2",
-      "name": "Product 2",
-      "price": 200,
-      "description": "Description of Product 2"
+      "name": "Optical Mouse",
+      "price": 45,
+      "description": "Wireless Optical Mouse"
     }
   ]
 }

@@ -18,5 +18,20 @@ async function getProducts(): Promise<Product[]> {
   return products;
 }
 
-const products = await getProducts();
-console.log(products);
+export async function setupProducts(productsContainer: HTMLDivElement) {
+  try {
+    const products = await getProducts();
+    products.forEach((product) => {
+      const productDiv = document.createElement("div");
+      productDiv.innerHTML = `
+        <p>${product.name} - $${product.price}</p>
+        `;
+      productsContainer.appendChild(productDiv);
+    });
+  } catch (error) {
+    productsContainer.innerHTML = `
+      <p class="error">Error fetching products.</p>
+    `;
+    console.error("Error fetching products:", error);
+  }
+}

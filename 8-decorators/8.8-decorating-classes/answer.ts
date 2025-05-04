@@ -2,7 +2,7 @@
 // Create a class decorator called `LogClass` that logs the name of the class when it is instantiated.
 // Apply this decorator to the `Person` class below.
 
-@LogClass
+@logClass
 class Person {
   constructor(
     public name: string,
@@ -10,7 +10,7 @@ class Person {
   ) {}
 }
 
-function LogClass(target: Function, _context: ClassDecoratorContext) {
+function logClass(target: Function, _context: ClassDecoratorContext) {
   console.log(`Class defined: ${target.name}`);
 }
 

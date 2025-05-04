@@ -21,7 +21,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       </details>
     </section>
 
-    <section id="form-validation-demo">
+    <section>
       <h2>Demo 2: Form Validation</h2>
       <details>
         <summary>Instructions</summary>
@@ -39,7 +39,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       </form>
     </section>
     
-    <section id="local-storage-demo">
+    <section>
       <h2>Demo 3: Local Storage</h2>
       <details>
         <summary>Instructions</summary>
@@ -50,7 +50,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       <button id="counter" type="button"></button>
     </section>
 
-    <section id="api-validation-demo">
+    <section>
       <h2>Demo 4: API Validation</h2>
       <div id="products"></div>
       <details>
@@ -60,7 +60,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       </details>
     </section>
 
-    <section id="environment-demo">
+    <section>
       <h2>Demo 5: Environment Variables</h2>
       <div id="environment"></div>
       <details>

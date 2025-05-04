@@ -67,7 +67,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
         <summary>Instructions</summary>
         The environment variables are loaded from the .env file, and parsed by Zod.
         If expected environment variables are not set, Zod throws an error, which is logged to the console.
-        Comment out an environment variable in the .env file to see an error.
+        Remove or corrupt an environment variable in the .env file to see an error.
       </details>
     </section>
   </div>

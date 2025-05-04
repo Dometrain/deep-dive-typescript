@@ -26,3 +26,15 @@ details {
   margin-bottom: 20px;
   color: gray;
 }
+
+h2 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+section {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 40px;
+  background-color: cornsilk;
+}

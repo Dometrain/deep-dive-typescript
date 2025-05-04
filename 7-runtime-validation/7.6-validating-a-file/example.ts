@@ -12,4 +12,11 @@ type Person = z.infer<typeof personSchema>;
 
 const parsedJson = JSON.parse(readFileSync("./people.json", "utf-8"));
 const people = personSchema.array().parse(parsedJson);
-console.log("Parsed data:", people);
+
+logPerson(people[0]); // Log the first person
+
+function logPerson(person: Person) {
+  console.log(
+    `Name: ${person.name}, Age: ${person.age}, Email: ${person.email}`
+  );
+}

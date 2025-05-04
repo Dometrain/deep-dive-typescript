@@ -9,4 +9,8 @@ const environmentSchema = z.object({
 
 export const env = environmentSchema.parse(import.meta.env);
 
-console.log("environment", env);
+export function setupEnvironment(environmentContainer: HTMLDivElement) {
+  environmentContainer.innerHTML = `
+    <pre>${JSON.stringify(env, null, 2)}</pre>`;
+  console.log("Environment Variables", env);
+}

@@ -15,7 +15,7 @@ const employeeSchema = z.object({
   name: z.string(),
   age: z.number().min(0).max(150),
   email: z.email(),
-  inAdmin: z.boolean(),
+  isAdmin: z.boolean(),
 });
 
 type Employee = z.infer<typeof employeeSchema>;

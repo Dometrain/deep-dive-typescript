@@ -3,7 +3,11 @@
   "ignorePaths": [],
   "dictionaryDefinitions": [],
   "dictionaries": [],
-  "words": ["nonpositive"],
+  "words": [
+    "nonpositive",
+    "uncapital",
+    "Uncapitalize"
+  ],
   "ignoreWords": [],
   "import": []
 }

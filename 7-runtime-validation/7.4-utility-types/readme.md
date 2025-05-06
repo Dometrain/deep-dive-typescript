@@ -4,5 +4,4 @@ Zod provides a number of equivalents to TypeScript utility types. These are usef
 
 - .pick/.omit
 - .partial
-- .deepPartial
 - .required

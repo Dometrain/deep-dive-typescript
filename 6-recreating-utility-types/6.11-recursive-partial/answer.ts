@@ -8,17 +8,6 @@ type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends object ? RecursivePartial<T[P]> : T[P];
 };
 
-// Or, more complex implementation with support for array and function properties.
-type DeepPartial<T> = T extends any[]
-  ? {
-      [K in keyof T]: T[K] extends Function ? T[K] : DeepPartial<T[K]>;
-    }
-  : T extends object
-    ? {
-        [K in keyof T]?: T[K] extends Function ? T[K] : DeepPartial<T[K]>;
-      }
-    : T;
-
 type Person = {
   name: string;
   age: number;
@@ -26,15 +15,25 @@ type Person = {
     city: string;
     country: string;
   };
+  emails: Email[];
+  register: () => void;
   location: string;
 };
 
-type PartialPerson = RecursivePartial<Person>;
+type Email = {
+  email: string;
+  type: "work" | "personal";
+};
 
-// Nested address properties are optional too.
-const person: PartialPerson = {
-  name: "John Doe",
-  address: {
-    city: "New York",
-  },
+// Can omit all properties
+const person1: RecursivePartial<Person> = {};
+
+// Nested address properties and properties on objects in email array are optional too.
+const person: RecursivePartial<Person> = {
+  address: {},
+  emails: [
+    {
+      email: "test@example.com",
+    },
+  ],
 };

@@ -6,12 +6,10 @@
     "@tsconfig/bun": "^1.0.7",
     "@types/bun": "^1.2.9",
     "@types/node": "^22.14.0",
-    "@types/react": "^19.0.12",
     "prettier": "^3.5.3"
   },
   "dependencies": {
     "arktype": "^2.1.19",
-    "react": "^19.0.0",
     "ts-brand": "^0.2.0",
     "type-testing": "^0.2.0",
     "valibot": "^1.0.0",

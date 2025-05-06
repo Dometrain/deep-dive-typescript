@@ -40,4 +40,6 @@ logWarning("HELLO WORLD");
 // logWarning("hello world");
 ```
 
-I'll show other ways these utilities useful in an upcoming lesson.
+## Implementation
+
+These utilities are implemented in the TypeScript compiler using the `intrinsic` keyword. The `intrinsic` keyword is used to indicate that a type is built into the TypeScript compiler and cannot be implemented in user code.

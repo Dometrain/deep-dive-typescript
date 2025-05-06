@@ -1,18 +1,31 @@
-// Example: Recursive type that creates a union all keys from a nested object
-
-// Type with nested properties
-type Person = {
-  name: string;
-  address: {
-    city: string;
-    country: string;
-  };
+// Recursive types define structures that reference themselves.
+type TreeNode<T> = {
+  value: T;
+  children: TreeNode<T>[]; // Recursive type. `TreeNode` can have children that are also TreeNode<T>.
 };
 
-type AllKeys<T> = T extends object
-  ? {
-      [K in keyof T]: K | AllKeys<T[K]>; // Union of key and nested keys
-    }[keyof T] // Extract union of all the keys
-  : never;
+type Tree<T> = {
+  root: TreeNode<T>;
+};
 
-type PersonKeys = AllKeys<Person>; // "name" | "address" | "city" | "country"
+// Example usage:
+const tree: Tree<number> = {
+  root: {
+    value: 1,
+    children: [
+      {
+        value: 2,
+        children: [],
+      },
+      {
+        value: 3,
+        children: [
+          {
+            value: 4,
+            children: [],
+          },
+        ],
+      },
+    ],
+  },
+};

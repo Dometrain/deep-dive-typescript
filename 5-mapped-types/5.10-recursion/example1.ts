@@ -1,31 +1,18 @@
-// Recursive types define structures that reference themselves.
-type TreeNode<T> = {
-  value: T;
-  children: TreeNode<T>[]; // Recursive type. `TreeNode` can have children that are also TreeNode<T>.
+// Example: Utility type that makes all properties (including nested properties) optional:
+
+type DeepPartial<T> = {
+  [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K];
 };
 
-type Tree<T> = {
-  root: TreeNode<T>;
+// Type with nested properties
+type Person = {
+  name: string;
+  address: {
+    city: string;
+    country: string;
+  };
 };
 
-// Example usage:
-const tree: Tree<number> = {
-  root: {
-    value: 1,
-    children: [
-      {
-        value: 2,
-        children: [],
-      },
-      {
-        value: 3,
-        children: [
-          {
-            value: 4,
-            children: [],
-          },
-        ],
-      },
-    ],
-  },
-};
+type PartialPerson = DeepPartial<Person>;
+const person: DeepPartial<Person> = {}; // valid
+const person2: DeepPartial<Person> = { address: { city: "New York" } }; // valid

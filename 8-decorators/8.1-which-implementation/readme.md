@@ -5,7 +5,7 @@ Let's talk decorators. Decorators are a way to handle metaprogramming in TypeScr
 TypeScript decorators are a confusing topic because there are two implementations:
 
 1. Experimental [stage 2 decorators](https://www.typescriptlang.org/docs/handbook/decorators.html) decorator support was added to TypeScript way back in 2015, but still to this day remains an unstable feature.
-2. [Stage 3 decorators](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#decorators), added in TS 5.0 and are enabled by default.
+2. [Stage 3 decorators](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#decorators), added in 2023 and are enabled by default.
 
 JavaScript decorators are a stage 3 ECMAScript proposal, which means they'll likely be final and stable soon.
 

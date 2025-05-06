@@ -2,7 +2,7 @@
 // Given the following variable, use the `typeof` operator to create `ProductNameType`.
 
 const productName = "Laptop";
-type ProductNameType = typeof productName; // string
+type ProductNameType = typeof productName; // "Laptop"
 
 // Exercise 2: typeof with objects
 // Given the following object, do two things:

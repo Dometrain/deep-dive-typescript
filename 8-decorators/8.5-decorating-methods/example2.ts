@@ -33,7 +33,10 @@ class Person {
 }
 
 const p = new Person("Ron");
-const greet = p.greet;
 
-// Works!
+// This works fine without the decorator
+p.greet();
+
+// This requires the bind decorator to work because the method is not bound
+const greet = p.greet;
 greet();

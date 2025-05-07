@@ -1,33 +1,19 @@
-// Method decorator
+// Using this in TypeScript
+// The JS spec doesn't allow a parameter called `this`.
+// So, in TypeScript, you can declare the type for `this` in the function body as the first parameter.
 
-// Useful for:
-// Tracing invocations
-// Binding methods to instances
-// Enhancing behavior
-// Performance monitoring
-
-// Log method performance
-function measure<This, Args extends any[], Return>(
-  originalMethod: (this: This, ...args: Args) => Return,
-  // This assures the decorator is only used as a method decorator
-  _context: ClassMethodDecoratorContext
-) {
-  function replacementFunction(this: This, ...args: Args): Return {
-    const start = performance.now();
-    const result = originalMethod.call(this, ...args);
-    const end = performance.now();
-    console.log(`Execution time: ${end - start} milliseconds`);
-    return result;
-  }
-  return replacementFunction;
+interface User {
+  id: number;
+  admin: boolean;
 }
 
-class Person {
-  @measure
-  greet() {
-    console.log("Hi!");
-  }
+declare const getDB: () => DB;
+
+interface DB {
+  filterUsers(filter: (this: User) => boolean): User[];
 }
 
-const person = new Person();
-person.greet(); // Logs "Hi!" and the execution time
+const db = getDB();
+const admins = db.filterUsers(function (this: User) {
+  return this.admin;
+});

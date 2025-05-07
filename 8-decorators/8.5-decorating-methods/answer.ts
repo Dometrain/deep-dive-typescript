@@ -14,8 +14,11 @@ class User {
   }
 }
 
-function logMethod(originalMethod: any, context: ClassMethodDecoratorContext) {
-  function replacementMethod(this: any, ...args: any[]) {
+function logMethod<This, Args extends any[], Return>(
+  originalMethod: (this: This, ...args: Args) => Return,
+  context: ClassMethodDecoratorContext
+) {
+  function replacementMethod(this: any, ...args: Args): Return {
     console.log("Method name: " + context.name.toString());
     console.log("Arguments: ", args);
     const result = originalMethod.call(this, ...args);

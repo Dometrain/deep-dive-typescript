@@ -1,42 +1,35 @@
-// Method decorator example 2
-// This binds the method to the class instance.
-// This isn’t returning anything – so it leaves the original method alone.
-// Instead, it adds logic before other fields are initialized.
-function bound<This, Args extends any[], Return>(
+// Method decorator
+
+// Useful for:
+// Tracing invocations
+// Binding methods to instances
+// Enhancing behavior
+// Validating method arguments
+// Caching method results
+// Performance monitoring
+
+// Log method performance
+function measure<This, Args extends any[], Return>(
   originalMethod: (this: This, ...args: Args) => Return,
-  context: ClassMethodDecoratorContext<
-    This,
-    (this: This, ...args: Args) => Return
-  >
+  // This assures the decorator is only used as a method decorator
+  _context: ClassMethodDecoratorContext
 ) {
-  const methodName = context.name;
-  if (context.private) {
-    throw new Error(
-      `'bound' cannot decorate private properties like ${methodName as string}.`
-    );
+  function replacementFunction(this: This, ...args: Args): Return {
+    const start = performance.now();
+    const result = originalMethod.call(this, ...args);
+    const end = performance.now();
+    console.log(`Execution time: ${end - start} milliseconds`);
+    return result;
   }
-  context.addInitializer(function () {
-    this[methodName] = this[methodName].bind(this);
-  });
+  return replacementFunction;
 }
 
 class Person {
-  name: string;
-  constructor(name: string) {
-    this.name = name;
-  }
-
-  @bound
+  @measure
   greet() {
-    console.log(`Hello, my name is ${this.name}.`);
+    console.log("Hi!");
   }
 }
 
-const p = new Person("Ron");
-
-// This works fine without the decorator
-p.greet();
-
-// This requires the bind decorator to work because the method is not bound
-const greet = p.greet;
-greet();
+const person = new Person();
+person.greet(); // Logs "Hi!" and the execution time

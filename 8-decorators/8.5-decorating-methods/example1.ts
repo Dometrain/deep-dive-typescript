@@ -2,23 +2,26 @@
 // The JS spec doesn't allow a parameter called `this`.
 // So, in TypeScript, you can declare the type for `this` in the function body as the first parameter.
 
-interface Book {
+class Book {
   price: number;
   numberSold: number;
-  getRevenue: (this: Book) => number; // Assure the this context is the Book object
-  getRevenueArrow: () => number; // Arrow function doesn't need this context since it inherits from the enclosing scope
+
+  constructor(price: number, numberSold: number) {
+    this.price = price;
+    this.numberSold = numberSold;
+  }
+
+  // Assure the this context is the Book object
+  getRevenue(this: Book) {
+    return this.price * this.numberSold;
+  }
+
+  getRevenueArrow = () => {
+    return this.price * this.numberSold;
+  };
 }
 
-const book: Book = {
-  price: 65,
-  numberSold: 1000,
-  getRevenue: function () {
-    return this.price * this.numberSold;
-  },
-  getRevenueArrow: () => {
-    return book.price * book.numberSold;
-  },
-};
+const book = new Book(65, 1000);
 
 console.log(book.getRevenue()); // works without a bind.
 

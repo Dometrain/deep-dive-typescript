@@ -1,35 +1,29 @@
-// Method decorator
+// Using `this` in TypeScript
+// The JS spec doesn't allow a parameter called `this`.
+// So, in TypeScript, you can declare the type for `this` in the function body as the first parameter.
 
-// Useful for:
-// Tracing invocations
-// Binding methods to instances
-// Enhancing behavior
-// Validating method arguments
-// Caching method results
-// Performance monitoring
-
-// Log method performance
-function measure<This, Args extends any[], Return>(
-  originalMethod: (this: This, ...args: Args) => Return,
-  // This assures the decorator is only used as a method decorator
-  _context: ClassMethodDecoratorContext
-) {
-  function replacementFunction(this: This, ...args: Args): Return {
-    const start = performance.now();
-    const result = originalMethod.call(this, ...args);
-    const end = performance.now();
-    console.log(`Execution time: ${end - start} milliseconds`);
-    return result;
-  }
-  return replacementFunction;
+interface Book {
+  price: number;
+  numberSold: number;
+  getRevenue: (this: Book) => number; // Assure the this context is the Book object
+  getRevenueArrow: () => number; // Arrow function doesn't need this context since it inherits from the enclosing scope
 }
 
-class Person {
-  @measure
-  greet() {
-    console.log("Hi!");
-  }
-}
+const book: Book = {
+  price: 65,
+  numberSold: 1000,
+  getRevenue: function () {
+    return this.price * this.numberSold;
+  },
+  getRevenueArrow: () => {
+    return book.price * book.numberSold;
+  },
+};
 
-const person = new Person();
-person.greet(); // Logs "Hi!" and the execution time
+console.log(book.getRevenue()); // works without a bind.
+
+const getRevenue = book.getRevenue.bind(book); // Must bind the method to the object so it compiles
+getRevenue();
+
+const getRevenueArrow = book.getRevenueArrow; // No need to bind since arrow function inherits this from the enclosing scope
+getRevenueArrow(); // works without a bind.

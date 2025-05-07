@@ -1,6 +1,4 @@
-// Using `this` in TypeScript
-// The JS spec doesn't allow a parameter called `this`.
-// So, in TypeScript, you can declare the type for `this` in the function body as the first parameter.
+// `this` context applies outside classes too.
 
 interface Book {
   price: number;

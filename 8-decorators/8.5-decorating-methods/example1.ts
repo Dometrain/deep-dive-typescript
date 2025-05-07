@@ -2,18 +2,21 @@
 // The JS spec doesn't allow a parameter called `this`.
 // So, in TypeScript, you can declare the type for `this` in the function body as the first parameter.
 
-interface User {
-  id: number;
-  admin: boolean;
+interface Book {
+  price: number;
+  numberSold: number;
+  getRevenue: (this: Book) => number;
 }
 
-declare const getDB: () => DB;
+const book: Book = {
+  price: 65,
+  numberSold: 1000,
+  getRevenue: function (this: Book) {
+    return this.price * this.numberSold;
+  },
+};
 
-interface DB {
-  filterUsers(filter: (this: User) => boolean): User[];
-}
+console.log(book.getRevenue()); // works without a bind.
 
-const db = getDB();
-const admins = db.filterUsers(function (this: User) {
-  return this.admin;
-});
+const getTotalRevenue = book.getRevenue.bind(book); // Must bind the method to the object so it compiles
+getTotalRevenue(); // Error: this is undefined

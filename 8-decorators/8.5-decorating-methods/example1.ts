@@ -5,8 +5,8 @@
 interface Book {
   price: number;
   numberSold: number;
-  getRevenue: (this: Book) => number;
-  getRevenueArrow: () => number;
+  getRevenue: (this: Book) => number; // Assure the this context is the Book object
+  getRevenueArrow: () => number; // Arrow function doesn't need this context since it inherits from the enclosing scope
 }
 
 const book: Book = {

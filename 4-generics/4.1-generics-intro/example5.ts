@@ -1,13 +1,16 @@
-// Another example of when type arguments are required:
-function combine<Type>(arr1: Type[], arr2: Type[]): Type[] {
-  return arr1.concat(arr2);
-}
+// Many other JS features that provide generic arguments in TypeScript...
+const map = new Map<string, number>([
+  ["Alice", 1],
+  ["Bob", 2],
+]);
 
-// Can omit when all the same type:
-const result1 = combine([1, 2], [3, 4]); // inferred to be number[]
+const promise = new Promise<string>((resolve) => {
+  resolve("Hello");
+});
 
-// Can omit when a mixed array is already specified:
-const result3 = combine([1, 2], [3, "4"]);
+const array: Array<string> = [];
 
-// Required with mismatched types:
-const result2 = combine<string | number>([1, 2], ["3"]);
+const record: Record<string, number> = {
+  Alice: 1,
+  Bob: 2,
+};

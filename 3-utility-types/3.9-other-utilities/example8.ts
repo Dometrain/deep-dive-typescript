@@ -1,4 +1,4 @@
-// Awaited utility type - recursively unwrap the value of a Promise.
+// Awaited - Recursively unwrap the value of a Promise.
 
 type User = {
   id: number;

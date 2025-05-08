@@ -14,8 +14,8 @@ class Person {
 
 type Constructor<T = {}> = new (...args: any[]) => T;
 
-function logClass(target: Constructor, _context: ClassDecoratorContext) {
-  console.log(`Class defined: ${target.name}`);
+function logClass(target: Constructor, context: ClassDecoratorContext) {
+  console.log(`Class defined: ${target.name}, ${context.name}`);
 }
 
 const person = new Person("Alice", 30);

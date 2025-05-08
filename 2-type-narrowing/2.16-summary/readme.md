@@ -1,6 +1,6 @@
 # Summary
 
-We just explored 13 ways to narrow a type.
+We just explored 14 ways to narrow a type.
 
 This table shows an example of each, and describes how each works.
 
@@ -19,5 +19,6 @@ This table shows an example of each, and describes how each works.
 | 11. `satisfies` Operator                      | `const value = { type: "A" } satisfies { type: "A": "B" }`             | Ensure a value satisfies a given type, but keep the most specific type.        |
 | 12. Type assertions                           | `const value = someValue as string`                                    | Treat a value as a specific type, **dangerously**.                             |
 | 13. Non-null assertion                        | `const value = someValue!`                                             | Tell TypeScript that a value is not null or undefined, **dangerously**.        |
+| 14. `this` parameter type                     | `function method(this: MyClass) { ... }`                               | Specify the type of `this` in a function or method.                            |
 
 Also, there are many third-party libraries that assist with validation and type narrowing at runtime including Zod, Valibot, ArkType, and tiny-invariant. We'll explore Zod later - it's the most popular choice for runtime validation.

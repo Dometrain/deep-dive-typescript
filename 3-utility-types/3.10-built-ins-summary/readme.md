@@ -1,4 +1,4 @@
-# Summary - Built-in Utility Types
+# Summary - Frequently Used Built-in Utility Types
 
 | Utility Type      | Description                                                                      | Example                                                                         |
 | ----------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |

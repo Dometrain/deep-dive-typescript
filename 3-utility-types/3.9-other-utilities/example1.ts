@@ -1,7 +1,5 @@
-// NoInfer utility type
-
-// This utility type is used to prevent TypeScript from inferring a type.
-// This is useful if inference would lead to a less desirable type, such as a wider type.
+// NoInfer - Prevent TypeScript from inferring a type.
+// Useful if inference leads to a less desirable type, such as a wider type.
 
 // Example usage of NoInfer utility type
 function createCarModel<T extends string>(

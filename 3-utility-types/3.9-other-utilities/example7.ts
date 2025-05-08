@@ -1,4 +1,6 @@
-// ReturnType utility type
+// ReturnType - Extract the return type of a function
+// Useful when you want to create a type based on the
+// return type of another function.
 
 function getUser() {
   return {

@@ -38,7 +38,6 @@ calc.add(5);
 console.log(calc.value); // 15
 
 // Exercise 4: Add a `this` type for this function
-// What happens if you call `obj.double()`? What happens if you call `double()` directly?
 function double(this: { value: number }) {
   this.value *= 2;
 }

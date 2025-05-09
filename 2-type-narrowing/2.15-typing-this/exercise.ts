@@ -11,10 +11,6 @@ const counter = {
 // 1. What happens if you call `counter.increment()`?
 // 2. What happens if you assign `counter.increment` to a variable and call it?
 
-// Answer:
-// 1. Calling `counter.increment()` works as expected, incrementing the `count` property.
-// 2. Assigning `counter.increment` to a variable and calling it results in a TypeScript error because `this` is not bound to the `counter` object.
-
 // Exercise 3: Using `this` in a class
 // Type the `this` param on the add and subtract methods.
 class Calculator {
@@ -38,7 +34,6 @@ calc.add(5);
 console.log(calc.value); // 15
 
 // Exercise 4: Add a `this` type for this function
-// What happens if you call `obj.double()`? What happens if you call `double()` directly?
 function double(this) {
   this.value *= 2;
 }

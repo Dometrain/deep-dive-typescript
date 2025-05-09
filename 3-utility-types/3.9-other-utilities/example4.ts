@@ -10,6 +10,6 @@ const incrementValue: NewFuncType = function (
   this.value += increment;
 };
 
-const context = { value: 5 };
+const context = { value: "5" };
 incrementValue.call(context, 3); // Now, context.value is 8
 console.log(context);

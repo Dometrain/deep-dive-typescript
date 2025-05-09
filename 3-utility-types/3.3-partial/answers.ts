@@ -1,5 +1,6 @@
 // Exercise 1: Basic usage of Partial
-// Question: Given the following interface, use the Partial utility type to create a `PartialHouse` type where all properties are optional.
+// Question: Given the following interface, use the Partial utility type to create a `PartialHouse`
+// type where all properties are optional.
 
 interface House {
   id: number;

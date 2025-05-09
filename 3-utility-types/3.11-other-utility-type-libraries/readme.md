@@ -1,6 +1,6 @@
 # Other Type utilities
 
-TypeScript has around 20 utility types built in. But there are over 100 handy third-party utility types.
+As you just saw, TypeScript has a bunch of handy utility types built in. But there are over 100 handy third-party utility types you might find useful too.
 
 Here are four of the most popular third-party utility type libraries:
 
@@ -9,6 +9,6 @@ Here are four of the most popular third-party utility type libraries:
 - https://github.com/andnp/SimplyTyped
 - https://github.com/sindresorhus/type-fest
 
-As you just saw, utility types are handy, and they work with many different types. If you open up the code for these types, you likely find it intimidating to read. These types use a variety of TypeScript features we haven't discussed yet including generics, mapped types, conditional types, template literal types, the `in` operator, infer and more.
+I want to warn you, if you open up the code for these types, you likely find it intimidating to read. These types use a variety of TypeScript features we haven't discussed yet including generics, mapped types, conditional types, template literal types, the `in` operator, infer and more.
 
 In the next lesson, we'll explore these topics so you can learn how to create your own powerful types that work with many different data structures, and how you can create new types from existing types.

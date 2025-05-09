@@ -1,0 +1,5 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true // Must enable for evolving any demo to work. Otherwise, arrays default to `never`.
+  }
+}

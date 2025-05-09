@@ -1,18 +1,27 @@
 // ThisType - Marker for a contextual `this` type
+// Useful to specify `this` with object literals
+// Avoids repeatedly specifying `this` in function signatures
 
-type ObjectWithMethods = {
-  data: { x: number; y: number };
-  methods: {
-    moveBy(dx: number, dy: number): void;
-  } & ThisType<{ x: number; y: number }>; // specify the type of `this` in methods
+type Math = {
+  double: () => number;
+  triple: () => number;
 };
 
-const obj: ObjectWithMethods = {
-  data: { x: 0, y: 0 },
-  methods: {
-    moveBy(dx, dy) {
-      this.x += dx;
-      this.y += dy;
-    },
+// ThisType avoids repeatedly specifying `this` in function signatures below
+const math: Math & ThisType<{ value: number }> = {
+  double() {
+    return this.value * 2;
+  },
+  triple() {
+    return this.value * 3;
   },
 };
+
+// Implementation
+const obj = {
+  value: 5,
+  ...math,
+};
+
+console.log(obj.double()); // 10
+// console.log(double());

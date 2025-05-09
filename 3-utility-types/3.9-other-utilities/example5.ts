@@ -2,26 +2,26 @@
 // Useful to specify `this` with object literals
 // Avoids repeatedly specifying `this` in function signatures
 
-type Math = {
-  double: () => number;
-  triple: () => number;
+type Logger = {
+  logInfo: () => string;
+  logError: () => string;
 };
 
 // ThisType avoids repeatedly specifying `this` in function signatures below
-const math: Math & ThisType<{ value: number }> = {
-  double() {
-    return this.value * 2;
+const logger: Logger & ThisType<{ message: string }> = {
+  logInfo() {
+    return `Info: ${this.message}`;
   },
-  triple() {
-    return this.value * 3;
+  logError() {
+    return `Error: ${this.message}`;
   },
 };
 
 // Implementation
-const obj = {
-  value: 5,
-  ...math,
+const logEntry = {
+  message: "System failure",
+  ...logger,
 };
 
-console.log(obj.double()); // 10
+console.log(logEntry.logInfo()); // Info: System failure
 // console.log(double());

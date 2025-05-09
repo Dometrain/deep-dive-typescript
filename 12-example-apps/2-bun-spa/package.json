@@ -5,10 +5,10 @@
     "start": "bun run --watch index.ts"
   },
   "dependencies": {
-    "typescript": "^5.7.2",
+    "typescript": "^5.8.3",
     "zod": "^4.0.0-beta.20250412T085909"
   },
   "devDependencies": {
-    "@types/bun": "^1.1.14"
+    "@types/bun": "^1.2.12"
   }
 }

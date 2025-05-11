@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "strict": true, // Enable all strict type checking options https://www.typescriptlang.org/tsconfig/#strict
+    "allowUnusedLabels": false, // Disallow unused labels (labels are rarely used, and typically a mistake)
+    "allowUnreachableCode": false, // Disallow unreachable code
+    "exactOptionalPropertyTypes": true, // prop?: string allows only a string or the absence of the property.
+    "noFallthroughCasesInSwitch": true, // Must break, return, or throw in all non-empty case
+    "noImplicitOverride": true, // Functions which override must use the keyword `override`
+    "noImplicitReturns": true, // All a function's code paths must have a return statement
+    "noPropertyAccessFromIndexSignature": true, // Must use obj["key"] syntax for fields that may not exist
+    "noUncheckedIndexedAccess": true, // Disallow accessing properties of an object that may not exist
+    "noUnusedLocals": true, // Disallow unused local variables
+    "noUnusedParameters": true, // Disallow unused parameters
+    "isolatedModules": true, // Ensure each file can be safely transpiled independently
+    "checkJs": true, // Type check JS files
+    "forceConsistentCasingInFileNames": true // File references must have correct casing
+  }
+}

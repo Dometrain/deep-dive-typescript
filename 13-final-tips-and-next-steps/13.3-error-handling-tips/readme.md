@@ -1,6 +1,6 @@
 ## Prefer unknown over any for error types
 
-Prefer typing errors as `unknown`. In JavaScript, anything can be thrown, including objects, strings, numbers, and even functions. So, defaulting to `unknown` assure you handle the error properly before using it. This is a good practice because it prevents runtime errors that can occur when you try to access properties or methods on an object that doesn't exist.
+Prefer typing errors as `unknown`. In JavaScript, anything can be thrown, including objects, strings, numbers, and even functions. So, defaulting to `unknown` assures you handle the error properly before using it. This prevents runtime errors that can occur when you try to access properties or methods on an object that doesn't exist.
 
 ```ts
 try {
@@ -38,22 +38,6 @@ Enable these in tsconfig.json:
 {
   "strictNullChecks": true,
   "noUncheckedIndexedAccess": true
-}
-```
-
-## Validate external inputs at runtime
-
-We used Zod, but can consider alternatives like ArkType, Valibot, io-ts, etc.
-
-```ts
-const schema = z.object({
-  name: z.string(),
-  age: z.number().min(0),
-});
-
-const result = schema.safeParse(input);
-if (!result.success) {
-  return { error: result.error.format() };
 }
 ```
 

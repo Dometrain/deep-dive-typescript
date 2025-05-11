@@ -8,14 +8,13 @@ function greet(person: Person) {
   console.log(`Hello, ${person.name}!`);
 }
 
-// note no type annotation
+// No type annotation
 const person = {
   name: "John Doe",
   age: 30, // Excess property if passed to a function accepting Person
 };
 
-// No error - extra age property is ignored.
-// Why? TS assumes we might be using `person` elsewhere
+// Works. Excess `age` property is ignored. Why? TS assumes we might be using `person` elsewhere
 greet(person);
 
 // But, if I call greet with an object literal, I get an error.

@@ -12,7 +12,7 @@
     "noUnusedLocals": true, // Disallow unused local variables
     "noUnusedParameters": true, // Disallow unused parameters
     "isolatedModules": true, // Ensure each file can be safely transpiled independently
-    "checkJs": true, // Type check JS files
+    "checkJs": true, // Type check JS files, (or set allowJs to false)
     "forceConsistentCasingInFileNames": true // File references must have correct casing
   }
 }

@@ -1,3 +1,4 @@
+// Consider modeling error states with union types
 // Instead of throwing, consider returning a union
 
 type Result<T> = { ok: true; value: T } | { ok: false; error: string };

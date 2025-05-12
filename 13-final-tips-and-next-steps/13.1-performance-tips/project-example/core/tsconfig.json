@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "outDir": "../lib",
+    "rootDir": ".",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "es2017",
+    "strict": true
+  },
+  "include": ["index.ts"]
+}

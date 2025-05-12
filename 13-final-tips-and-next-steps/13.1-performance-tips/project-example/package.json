@@ -1,0 +1,10 @@
+{
+  "name": "project-references-demo",
+  "scripts": {
+    "build": "tsc -b -v",
+    "clean": "tsc -b --clean"
+  },
+  "dependencies": {
+    "typescript": "^5.8.3"
+  }
+}

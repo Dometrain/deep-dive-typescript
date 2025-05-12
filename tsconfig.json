@@ -18,6 +18,7 @@
   },
   "exclude": [
     "1-ready-to-record/7-runtime-validation-via-zod/7.6-use-cases/example2-web-app",
+    "9-advanced-features-and-techniques/9.10-evolving-any",
     "12-example-apps"
   ]
 }

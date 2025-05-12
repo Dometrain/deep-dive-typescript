@@ -1,18 +1,18 @@
 {
   "compilerOptions": {
     "strict": true, // Enable all strict type checking options https://www.typescriptlang.org/tsconfig/#strict
-    "allowUnusedLabels": false, // Disallow unused labels (labels are rarely used, and typically a mistake)
-    "allowUnreachableCode": false, // Disallow unreachable code
-    "exactOptionalPropertyTypes": true, // prop?: string allows only a string or the absence of the property.
-    "noFallthroughCasesInSwitch": true, // Must break, return, or throw in all non-empty case
-    "noImplicitOverride": true, // Functions which override must use the keyword `override`
-    "noImplicitReturns": true, // All a function's code paths must have a return statement
-    "noPropertyAccessFromIndexSignature": true, // Must use obj["key"] syntax for fields that may not exist
-    "noUncheckedIndexedAccess": true, // Disallow accessing properties of an object that may not exist
+    "allowUnusedLabels": false, // Disallow unused labels (typically a mistake) - See example1.
+    "allowUnreachableCode": false, // Disallow unreachable code - See example2.
+    "exactOptionalPropertyTypes": true, // allow only a valid value or exclude the property. See example3.
+    "noFallthroughCasesInSwitch": true, // Must break, return, or throw in all non-empty case. See example4.
+    "noImplicitOverride": true, // Functions which override must use the keyword `override`. See example5.
+    "noImplicitReturns": true, // All a function's code paths must have a return statement. See example6.
+    "noPropertyAccessFromIndexSignature": true, // Must use obj["key"] syntax if field may not exist. See example7.
+    "noUncheckedIndexedAccess": true, // Disallow accessing properties of an object that may not exist. See example8.
     "noUnusedLocals": true, // Disallow unused local variables
     "noUnusedParameters": true, // Disallow unused parameters
-    "isolatedModules": true, // Ensure each file can be safely transpiled independently
-    "checkJs": true, // Type check JS files, (or set allowJs to false)
+    "isolatedModules": true, // Ensure each file can be safely transpiled independently. See example9.
+    "allowJs": false, // Don't allow JS files (or set checkJs to true if you have JS files)
     "forceConsistentCasingInFileNames": true // File references must have correct casing
   }
 }

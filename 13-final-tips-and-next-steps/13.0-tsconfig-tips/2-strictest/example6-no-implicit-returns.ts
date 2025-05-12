@@ -1,8 +1,8 @@
 // No implicit returns - catches missing return statements in functions
 // (Can also protect from this via explicit return types)
 
-// @ts-expect-error
-function lookupBooksPublisher(genre: "fiction" | "non-fiction") {
+// @ts-ignore
+function lookupPublisher(genre: "fiction" | "non-fiction") {
   if (genre === "fiction") {
     return "penguin";
   } else {

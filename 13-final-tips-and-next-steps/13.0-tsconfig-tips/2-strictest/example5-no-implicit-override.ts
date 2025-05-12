@@ -7,6 +7,5 @@ class Car extends Vehicle {
 }
 
 class Truck extends Vehicle {
-  // @ts-expect-error
-  setup() {} // Error: Implicit override
+  // setup() {} // Error: Implicit override
 }

@@ -1,11 +1,7 @@
 # Linting TypeScript
 
-In JavaScript, linting is a way to analyze code for potential errors and enforce coding standards. There are a variety of linting rules that can be used to catch common mistakes and enforce best practices.
+In JavaScript, linting is a way to analyze code for potential errors and enforce coding standards. ESLint and Biome are popular linting tools that support both JavaScript and TypeScript.
 
-I recommend using ESLint for linting TypeScript code. ESLint is a popular linting tool that can be used to analyze JavaScript and TypeScript code. It has a large number of built-in rules and can be extended with custom rules.
+ESLint and Biome are both extensible and can be configured to work with various plugins and rulesets. They can help you catch common mistakes, enforce coding styles, and improve code quality. Biome is a newer tool that aims to be a complete JavaScript and TypeScript toolchain, while ESLint is more focused solely on linting.
 
-For TypeScript, consider these ESLint plugins:
-
-- https://typescript-eslint.io/. There are dozens of rules, and a set of recommended rules. I suggest using the recommended rules as a starting point and then add or remove rules as needed.
-
--
+If you use ESLint, I recommend using [typescript-eslint](https://typescript-eslint.io/). It contains dozens of useful rules to help enforce coding standards. It provides recommended rules as a starting point. If you use Biome, typescript-eslint is built in and Biome provides recommended rules as well. Biome has other features like a built-in formatter that replaces the need for tools like Prettier as well.

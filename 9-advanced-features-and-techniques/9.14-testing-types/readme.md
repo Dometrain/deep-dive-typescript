@@ -1,6 +1,10 @@
 # Testing types
 
-Sometimes, you want to test your types. This can be useful when you have a complex type that you want to ensure is correct. You can write tests that check that the type is what you expect it to be.
+Sometimes, you want to test your types. This may sound silly at first. If the type is simple, then why would I test it?
+
+Well, for something simple, I wouldn't test it.
+
+Testing types is useful when you have a complex type that you want to ensure is correct. You can write tests that check that the type is what you expect it to be.
 
 This need not be complicated. You can declare a few simple types and use the `expect` function to check that the type is what you expect it to be. This is a simple way to test your types without needing a full testing framework.
 

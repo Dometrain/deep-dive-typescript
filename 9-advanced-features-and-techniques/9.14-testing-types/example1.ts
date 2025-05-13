@@ -1,8 +1,8 @@
-// Testing types
+// Q: Why would I write a test for this?
+// A: You wouldn't. This is a simple type that doesn't warrant testing.
 
-export type Equal<A, B> =
-  (<T>() => T extends A ? 1 : 2) extends <T>() => T extends B ? 1 : 2
-    ? true
-    : false;
-
-export type Expect<T extends true> = Equal<T, true>;
+type Vehicle = {
+  make: string;
+  model: string;
+  year: number;
+};

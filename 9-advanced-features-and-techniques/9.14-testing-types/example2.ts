@@ -1,27 +1,10 @@
-import { Expect, Equal } from "./example1";
+// Consider testing types when they're complex (conditionals, recursion, looping, constraints, etc.)
+// Especially important when the type is published via a package or library.
 
-// Let's test this
-type RecursivePartial<T> = {
-  [P in keyof T]?: T[P] extends object ? RecursivePartial<T[P]> : T[P];
-};
+// These two types are all you need to test your types...
+export type Equal<A, B> =
+  (<T>() => T extends A ? 1 : 2) extends <T>() => T extends B ? 1 : 2
+    ? true
+    : false;
 
-type Person = {
-  name: string;
-  address: {
-    country: string;
-  };
-};
-
-type testCases = [
-  Expect<
-    Equal<
-      RecursivePartial<Person>,
-      {
-        name?: string;
-        address?: {
-          country?: string;
-        };
-      }
-    >
-  >,
-];
+export type Expect<T extends true> = Equal<T, true>;

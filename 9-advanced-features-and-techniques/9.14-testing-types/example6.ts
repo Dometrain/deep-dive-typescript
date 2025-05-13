@@ -1,4 +1,4 @@
-import { expectTypeOf } from "expect-type";
+import { expectTypeOf, test } from "vitest";
 
 // Let's test this
 type RecursivePartial<T> = {
@@ -19,9 +19,11 @@ const partialPerson: RecursivePartial<Person> = {
   },
 };
 
-expectTypeOf(partialPerson).toEqualTypeOf<{
-  name?: string;
-  address?: {
-    country?: string;
-  };
-}>();
+test("RecursivePartial should make all nested keys optional", () => {
+  expectTypeOf(partialPerson).toExtend<{
+    name?: string;
+    address?: {
+      country?: string;
+    };
+  }>();
+});

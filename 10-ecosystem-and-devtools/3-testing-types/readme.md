@@ -53,4 +53,8 @@ Includes:
 - TrueCases
 - FalseCases
 
-- [ts-expect](https://github.com/TypeStrong/ts-expect)
+# Others:
+
+- [tsd](https://github.com/tsdjs/tsd) - CLI that runs the TypeScript type checker over assertions
+- [ts-expect](https://github.com/TypeStrong/ts-expect) - Exports several generic helper types to perform type assertions
+- [type-plus](https://unional.github.io/type-plus/) - Type and runtime TypeScript assertions

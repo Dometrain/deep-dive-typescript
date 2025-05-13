@@ -7,8 +7,6 @@ If you want to practice your skills, here's a check out:
 - [Type Challenges](https://github.com/type-challenges/type-challenges)
 - [Type Hero](https://typehero.dev)
 
-Both these resources are great for practicing your TypeScript skills.
+These sites have a variety of interesting challenges, so they're a great spot to practice your advanced TypeScript skills.
 
-# More resources
-
-https://github.com/type-challenges/type-challenges?tab=readme-ov-file#recommended-readings
+I'm also available for hire! If your team is looking for a TypeScript developer, please connect with me on LinkedIn - I'm Cory House, or you can follow me on X - I'm housecor there. I would love to help your team with your project.

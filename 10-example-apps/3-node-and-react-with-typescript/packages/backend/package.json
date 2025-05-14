@@ -6,8 +6,7 @@
     "start": "bun run --watch index.ts"
   },
   "devDependencies": {
-    "@types/bun": "^1.1.14",
-    "typescript": "^5.7.2"
+    "@types/bun": "^1.1.14"
   },
   "dependencies": {
     "@types/express": "^5.0.1",

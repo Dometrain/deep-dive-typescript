@@ -1,4 +1,5 @@
-// Named tuples label a tuple's elements.
+// Problem: What do the elements in a tuple represent?
+// Solution: Named tuples label a tuple's elements.
 type Location = [lat: number, long: number];
 
 // Hover Location type to see the labels

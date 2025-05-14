@@ -1,8 +1,8 @@
 # Type Only Imports and Export
 
-We briefly discussed type only imports in the getting started course.
+We briefly discussed type only imports and exports in the getting started course.
 
-Type-only imports are a way to explicitly import types. This can be useful in some edge cases, such as when you want to avoid importing unnecessary runtime dependencies or improve performance.
+Type-only imports are a way to explicitly import and export types. This can be useful in some edge cases, such as when you want to avoid importing unnecessary runtime dependencies or improve performance.
 
 ## `import type` Statements
 
@@ -60,7 +60,7 @@ const data = { id: 1 }; // The import is removed because it's only for a type.
 
 ## 4. Side Effect Imports
 
-If no exports from a given import is used, it gets removed from the final bundle.
+If no exports from a given import are used, it gets removed from the final bundle.
 
 **Example:**
 

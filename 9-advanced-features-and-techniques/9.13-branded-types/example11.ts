@@ -1,21 +1,22 @@
-// Effect - https://effect.website/docs/code-style/branded-types/
-// https://effect.website/docs/code-style/branded-types/#how-branded-types-help
+import * as z from "zod";
 
-const BrandTypeId: unique symbol = Symbol.for("effect/Brand");
+const currencySchema = z.number().positive(); // Can be highly specific in our validation
+const usDollarSchema = currencySchema.brand<"usDollar">();
+const euroSchema = currencySchema.brand<"euro">();
 
-type ProductId = number & {
-  readonly [BrandTypeId]: {
-    readonly ProductId: "ProductId";
-  };
-};
+type UsDollar = z.infer<typeof usDollarSchema>;
+type Euro = z.infer<typeof euroSchema>;
 
-const getProductById = (_id: ProductId) => {
-  // Logic to retrieve product
-};
+function payEuropeanTaxes(amount: Euro): void {
+  console.log(`Paying ${amount} in Euro`);
+}
 
-type UserId = number;
+// Zod safely parses the number to a branded type. No type assertion needed.
+const euros: Euro = euroSchema.parse(100);
+const dollars: UsDollar = usDollarSchema.parse(100);
 
-const id: UserId = 1;
+payEuropeanTaxes(euros); // OK
+// payEuropeanTaxes(dollars); // Error: Argument of type 'UsDollar' is not assignable to parameter of type 'Euro'
 
-// This fails as expected
-// getProductById(id); // Argument of type 'number' is not assignable to parameter of type 'ProductId'.
+// To see this work:  tsc example12.ts --target es2022 --moduleResolution nodenext --module nodenext
+// Need to include these configs since tsconfig is ignored when a single file is compiled.

@@ -4,8 +4,8 @@
   "private": true,
   "devDependencies": {
     "@tsconfig/bun": "^1.0.7",
-    "@types/bun": "^1.2.12",
-    "@types/node": "^22.15.17",
+    "@types/bun": "^1.2.13",
+    "@types/node": "^22.15.18",
     "prettier": "^3.5.3"
   },
   "dependencies": {

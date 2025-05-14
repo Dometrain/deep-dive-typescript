@@ -3,5 +3,5 @@ import type { B } from "./b";
 
 export interface A {
   id: number;
-  related: B;
+  related?: B;
 }

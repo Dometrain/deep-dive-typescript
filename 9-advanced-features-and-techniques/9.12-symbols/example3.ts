@@ -1,20 +1,13 @@
-// Real world symbol example
+// Symbol example. Like a "private", unique property.
+// Useful when I'm creating a library and want to
+// add metadata to an object without worrying about name collisions
+// with properties in the host code or in other libraries.
 
-const uniqueId = Symbol("uniqueId");
+const isSerializable = Symbol("isSerializable");
+const user = {
+  name: "Cory",
+  email: "c@example.com",
+  [isSerializable]: true, // This is omitted in JSON.stringify
+};
 
-class User {
-  private data: { [key: symbol]: any } = {};
-
-  setProperty(key: symbol, value: any) {
-    this.data[key] = value;
-  }
-
-  getProperty(key: symbol): any {
-    return this.data[key];
-  }
-}
-
-const user = new User();
-user.setProperty(uniqueId, 12345);
-
-console.log(user.getProperty(uniqueId)); // Output: 12345
+console.log(JSON.stringify(user));

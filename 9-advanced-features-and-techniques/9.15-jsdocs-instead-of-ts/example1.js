@@ -1,3 +1,5 @@
+// Using JSDocs instead of traditional TypeScript syntax
+
 /**
  * @param {number} a
  * @param {number} b

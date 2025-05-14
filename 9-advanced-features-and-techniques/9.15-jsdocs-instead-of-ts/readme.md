@@ -65,4 +65,8 @@ Some alternative JSDoc syntax is inspired by Google Closure.
 
 # Tradeoffs
 
-The downside of using JSDoc is that the syntax is more verbose than TypeScript, and it's not directly inline in the code, so it's harder to read. There are also multiple ways to declare types, which it can be confusing and lead to inconsistency.
+The advantage of JSDoc is you're writing plain JS, so you don't have to compile your code. It runs anywhere. This can speed up your CI build and save you time waiting for TypeScript to compile.
+
+However, these days, there are many runtimes that support TypeScript natively, like Deno, Bun, and modern Node. So in many cases, you don't need to compile your TypeScript to run it. You can just let your editor check types as you code.
+
+The other downside of using JSDoc is that the syntax is more verbose than TypeScript, and it's not directly inline in the code, so it's harder to read. There are also multiple ways to declare types, which it can be confusing and lead to inconsistency.

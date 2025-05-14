@@ -5,7 +5,7 @@ interface Address {
 
 type Country = "USA" | "UK" | "Canada" | "Mexico";
 
-// Type only export, or could export each separately above
+// Type only export (or could export each separately above)
 export type { Address, Country };
 
 export function logAddress(address: Address) {

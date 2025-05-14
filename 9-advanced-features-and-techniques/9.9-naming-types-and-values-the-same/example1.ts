@@ -1,4 +1,5 @@
-// Types and values can have the same name in TypeScript (but generally I'd avoid this)
+// Types and values can have the same name in TypeScript
+// (but generally I'd avoid this)
 export type SportsTeam = {
   name: string;
   city: string;

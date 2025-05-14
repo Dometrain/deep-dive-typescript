@@ -13,7 +13,7 @@
     "noUnusedLocals": false, // Some demos don't use all values, so disabled. Set to true in real app.
     "noUnusedParameters": false, // Error when a function parameter isn't read. Disabled so incomplete exercises don't error
     "strictPropertyInitialization": true, // Can toggle this for class module.
-    "noImplicitAny": false, // Set to true in real app. But some demos have any for examples, so don't enforce this
+    "noImplicitAny": false, // Set to true in real app. But some demos use any, so don't enforce this
     "skipLibCheck": true // Skip type checking all .d.ts files. Set to true for performance.
   },
   "exclude": [

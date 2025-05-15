@@ -16,7 +16,8 @@ type Test4 = Equal<{ a: 1 }, { a: number }>; // false
 
 // Why compare functions in the Equal type above?
 // In short, TS function compatibility is stricter than object compatibility.
-// Using a function in Equal<A, B> ensures that only truly identical types are considered equal, not just structurally compatible ones.
+// Using a function in Equal<A, B> ensures that only truly identical types are considered equal,
+// not just structurally compatible ones.
 
 // Long answer:
 // Functions are used in the Equal<A, B> generic type to prevent TypeScript's structural type system
@@ -30,5 +31,5 @@ type B = { a: string; b: number };
 type AreEqual = A extends B ? true : false; // false
 type AlsoEqual = B extends A ? true : false; // true
 
-// By wrapping the types in a generic function type (<T>() => ...), we force TypeScript to compare the types in a way
-// that respects their exact structure, not just their structural compatibility.
+// By wrapping the types in a generic function type (<T>() => ...), we force TypeScript to compare the types
+//  in a way that respects their exact structure, not just their structural compatibility.

@@ -8,7 +8,9 @@ type Vehicle = {
   year: number;
 };
 
-// Worth testing.
+// Consider testing a type when:
+// 1. It's complex (conditionals, recursion, looping, constraints, etc.)
+// 2. It's published via a package or library.
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends object ? RecursivePartial<T[P]> : T[P];
 };

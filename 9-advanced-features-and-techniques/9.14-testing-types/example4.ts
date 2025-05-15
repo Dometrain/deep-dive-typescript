@@ -1,4 +1,4 @@
-import { Expect, Equal } from "type-testing";
+import { Expect, Equal } from "./example2";
 
 // Let's test this
 type RecursivePartial<T> = {
@@ -23,34 +23,3 @@ type testCase = Expect<
     }
   >
 >;
-
-// Or, can declare multiple test cases in an array
-
-type testCases = [
-  Expect<
-    Equal<
-      RecursivePartial<Person>,
-      {
-        name?: string;
-        address?: {
-          country?: string;
-        };
-      }
-    >
-  >,
-];
-
-// Includes
-// Equal
-// NotEqual
-// Expect
-// ExpectFalse
-// Extends
-// IsAny
-// IsNever
-// IsTuple
-// IsUnion
-// IsUnknown
-// SimpleEqual
-// TrueCases
-// FalseCases

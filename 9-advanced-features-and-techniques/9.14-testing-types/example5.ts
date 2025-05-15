@@ -1,4 +1,4 @@
-import { expectTypeOf } from "expect-type";
+import { Expect, Equal } from "type-testing";
 
 // Let's test this
 type RecursivePartial<T> = {
@@ -12,16 +12,45 @@ type Person = {
   };
 };
 
-const partialPerson: RecursivePartial<Person> = {
-  name: "Cory",
-  address: {
-    country: "USA",
-  },
-};
+type testCase = Expect<
+  Equal<
+    RecursivePartial<Person>,
+    {
+      name?: string;
+      address?: {
+        country?: string;
+      };
+    }
+  >
+>;
 
-expectTypeOf(partialPerson).toEqualTypeOf<{
-  name?: string;
-  address?: {
-    country?: string;
-  };
-}>();
+// Or, can declare multiple test cases in an array
+
+type testCases = [
+  Expect<
+    Equal<
+      RecursivePartial<Person>,
+      {
+        name?: string;
+        address?: {
+          country?: string;
+        };
+      }
+    >
+  >,
+];
+
+// Includes
+// Equal
+// NotEqual
+// Expect
+// ExpectFalse
+// Extends
+// IsAny
+// IsNever
+// IsTuple
+// IsUnion
+// IsUnknown
+// SimpleEqual
+// TrueCases
+// FalseCases

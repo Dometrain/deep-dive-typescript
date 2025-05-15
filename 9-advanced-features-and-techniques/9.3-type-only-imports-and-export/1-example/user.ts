@@ -1,11 +1,12 @@
-// Valid, and `logAddress` import is NOT erased since it's not a type.
-import { logAddress, type Address } from "./address";
+// Type only import
+import { type Address } from "./address";
 
-// Favor type *outside* the braces if only importing types, since the import completely erases.
+// Can place type *outside* the braces if only importing types
 // import type { Address } from "./address";
 
-// This works too, but the import isn't fully erased when verbatimModuleSyntax is true.
-// import { type Address } from "./address";
+// Can mix type and traditional imports
+// `logAddress` import is NOT erased since it's not a type.
+// import { logAddress, type Address } from "./address";
 
 // Invalid. `logAddress` isn't a type
 // import type { logAddress, Address } from "./address";
@@ -26,4 +27,4 @@ const user: User = {
   },
 };
 
-logAddress(user.address); // Address: New York, USA
+// logAddress(user.address);

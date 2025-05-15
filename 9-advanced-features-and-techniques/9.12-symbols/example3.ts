@@ -1,13 +1,12 @@
-// Symbol example. Like a "private", unique property.
-// Useful when I'm creating a library and want to
-// add metadata to an object without worrying about name collisions
-// with properties in the host code or in other libraries.
+// JS Symbol example.
 
 const isSerializable = Symbol("isSerializable");
+
 const user = {
   name: "Cory",
   email: "c@example.com",
-  [isSerializable]: true, // This is omitted in JSON.stringify
+  [isSerializable]: true, // "hidden" - Omitted in JSON.stringify below
 };
 
 console.log(JSON.stringify(user));
+console.log(user[isSerializable]); // But, can access it directly at runtime via the symbol reference.

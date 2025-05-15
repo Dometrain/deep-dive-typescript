@@ -1,52 +1,39 @@
 // Exercise: Branded Types in TypeScript
 
 // Question 1:
-// Create a branded type for a UserId that is a string but cannot be confused with a regular string.
+// Create a branded type `Username` that is a string.
 
-type UserId = string & { readonly brand: unique symbol };
+declare const usernameSymbol: unique symbol;
+type Username = string & { [usernameSymbol]: void };
 // or
-// type UserId = string & { __brand: unique symbol };
+// type Username = string & { __brand: "username" };
 // or
-// declare const userIdSymbol: unique symbol;
-// type UserId = string & { [userIdSymbol]: void };
-
-const createUserId = (id: string): UserId => id as UserId;
+// type Username = string & { __username: "username" };
 
 // Question 2:
-// Uncomment the `User` type below, then write a function `getUserById` that accepts the `UserId` type created in question 1,
-// and returns a user with the given userId. Set the user's `name` property to "John".
-// Then, invoke the function with a UserId and log the result.
+// Create two functions:
+// 1. `assertUsername` - An assertion function that accepts a string and assures it's
+// 2. `toUsername` - A type predicate that calls `assertUsername`, then converts a string to a `Username`
+// via a type assertion.
 
-type User = {
-  id: UserId;
-  name: string;
-};
+// Type predicate to convert a string to Username
+function toUsername(username: string): Username {
+  assertUsername(username);
+  return username as Username;
+}
 
-const getUserById = (id: UserId): User => {
-  return {
-    id,
-    name: "John",
-  };
-};
-
-const userId: UserId = createUserId("12345");
-const user = getUserById(userId);
-console.log(user);
+// Assertion function to validate the value at runtime
+function assertUsername(value: string): asserts value is Username {
+  if (value.length < 3)
+    throw new Error("Username must be at least 3 characters");
+}
 
 // Question 3:
-// Create a branded type for a Meter that is a number but cannot be confused with a regular number.
+// Create a function called logUsername that accepts a Username and logs it to the console.
+// Call the `toUsername` function created in Question 2 to safely convert a string to a Username.
+function logUsername(username: Username): void {
+  console.log(`Username: ${username}`);
+}
 
-type Meter = number & { readonly brand: unique symbol };
-
-const createMeter = (value: number): Meter => value as Meter;
-
-// Question 4:
-// Write a function `convertMetersToCentimeters` that accepts a Meter and returns the equivalent value in centimeters, as a number.
-
-const convertMetersToCentimeters = (value: Meter): number => {
-  return value * 100;
-};
-
-const distance: Meter = createMeter(100);
-const distanceInCm = convertMetersToCentimeters(distance);
-console.log(distanceInCm);
+const username = toUsername("Cory");
+logUsername(username);

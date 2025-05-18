@@ -12,6 +12,4 @@ And the "[Choosing Compiler Options](https://www.typescriptlang.org/docs/handboo
 
 ## Extending tsconfig.json
 
-Remember if you have some folders that need different tsconfig settings, you can place a tsconfig.json file in that folder. The settings in that file will override the settings in the root tsconfig.json file.
-
-- https://www.typescriptlang.org/docs/handbook/modules/guides/choosing-compiler-options.html
+As I've shown in this course, if some of your folders need different tsconfig settings, you can place a tsconfig.json file in that folder. The settings in that file will override the settings in the root tsconfig.json file.

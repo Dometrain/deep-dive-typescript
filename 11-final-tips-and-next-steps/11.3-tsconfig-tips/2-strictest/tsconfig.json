@@ -1,6 +1,7 @@
+// Strictest tsconfig.json
 {
   "compilerOptions": {
-    "strict": true, // Enable all strict type checking options https://www.typescriptlang.org/tsconfig/#strict
+    "strict": true, // Enable all strict type checking options
     "allowUnusedLabels": false, // Disallow unused labels (typically a mistake) - See example1.
     "allowUnreachableCode": false, // Disallow unreachable code - See example2.
     "exactOptionalPropertyTypes": true, // allow only a valid value or exclude the property. See example3.

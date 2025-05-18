@@ -1,5 +1,23 @@
 # Migration tips
 
-If you need to migrate a JS codebase, consider enabling `allowJs` and `checkJs` in your tsconfig.json at first to allow TypeScript to type check JavaScript files. This is useful for gradually migrating a codebase from JavaScript to TypeScript. This allows you to start using TypeScript features in your JavaScript files without having to convert everything at once.
+When migrating a codebase from JS to TS, there are two schools of thought:
 
-You can also consider Airbnb's [ts-migrate](https://github.com/airbnb/ts-migrate) project, which is a tool for migrating JavaScript codebases to TypeScript. It automates the migration process by converting all JS files to TS files to accelerate the TypeScript migration process. The resulting code will pass the build, but there will be lots of `// @ts-expect-error`, and `any` that will need to be fixed over time. This is a good starting point, but you will need to do some manual work to clean up the code over time and make it more type-safe.
+1. Start strict, and loosen in spots as needed.
+2. Start loose, and migrate to stricter rules over time.
+
+I prefer 1. It's safer.
+
+With 2, we may never bother becoming stricter. And any new code is held to a low standard, which creates "type debt".
+
+With 1, new code is held to a strict standard, and existing code can selectively have looser typing rules via nested tsconfigs, or by disabling TS in spots if necessary.
+
+Default strict. Loosen when necessary.
+
+That said, if you disagree with me and prefer starting with loose settings, then consider enabling `allowJs` and `checkJs` in your tsconfig.json at first. This allows TypeScript to type check JavaScript files. This is useful for gradually migrating a codebase from JavaScript to TypeScript. This allows you to start using TypeScript features in your JavaScript files without having to convert everything at once.
+
+You can also consider Airbnb's [ts-migrate](https://github.com/airbnb/ts-migrate) project, which is a tool to quickly migrate JavaScript codebases to TypeScript. It automates the migration process by basically doing two things:
+
+1. First, it updates all file extensions from .js to .ts.
+2. It adds `// @ts-expect-error`, and `any` as needed so the code compiles.
+
+Again, this is a compromise. It means the code has many spots that aren't truly type safe, but you can then incrementally remove the `any` and ts-expect-error comments. So ts-migrate creates good starting point, but you'll need to do some manual work to clean up the code over time to improve type safety.

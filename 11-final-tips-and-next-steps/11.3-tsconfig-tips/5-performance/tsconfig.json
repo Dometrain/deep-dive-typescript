@@ -1,0 +1,12 @@
+{
+  // Configure `include/exclude` to only compile necessary files.
+  "include": ["./src/**/*"],
+  "exclude": [],
+  "compilerOptions": {
+    "skipLibCheck": true, // Skip type checking of declaration files.
+    "noEmit": true, // Skip emitting output files.
+    "incremental": true, // Faster builds. Only recompile changed files.
+    "noUnusedLocals": true, // Disallow unused local variables
+    "noUnusedParameters": true // Disallow unused parameters
+  }
+}

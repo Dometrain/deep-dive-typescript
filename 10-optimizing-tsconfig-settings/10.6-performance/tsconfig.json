@@ -1,6 +1,6 @@
 {
   // Configure `include/exclude` to only compile necessary files.
-  "include": ["./src/**/*"],
+  "include": ["./project-example/**/*.ts"],
   "exclude": [],
   "compilerOptions": {
     "skipLibCheck": true, // Skip type checking of declaration files.

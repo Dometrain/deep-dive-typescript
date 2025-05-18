@@ -19,6 +19,6 @@
   "exclude": [
     "1-ready-to-record/7-runtime-validation-via-zod/7.6-use-cases/example2-web-app",
     "9-advanced-features-and-techniques/9.7-evolving-any",
-    "10-example-apps"
+    "11-example-apps"
   ]
 }

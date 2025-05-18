@@ -1,4 +1,4 @@
-Summary: 6 ways to brand a type
+Summary: 5 ways to brand a type
 
 ```ts
 // Option 1: __brand

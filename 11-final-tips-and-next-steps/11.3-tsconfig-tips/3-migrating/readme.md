@@ -13,7 +13,9 @@ With 1, new code is held to a strict standard, and existing code can selectively
 
 Default strict. Loosen when necessary.
 
-That said, if you disagree with me and prefer starting with loose settings, then consider enabling `allowJs` and `checkJs` in your tsconfig.json at first. This allows TypeScript to type check JavaScript files. This is useful for gradually migrating a codebase from JavaScript to TypeScript. This allows you to start using TypeScript features in your JavaScript files without having to convert everything at once.
+By starting strict, you can slowly migrate your code to TypeScript by converting one file at a time. This allows you to gradually introduce TypeScript into your codebase without having to convert everything at once. Start with the most critical files such as the files that are touched most often, and work your way down to the less important ones. This approach also allows you to take advantage of TypeScript's type checking and other features as you go, rather than waiting until everything is converted.
+
+Also, you can consider enabling `allowJs` and `checkJs` in your tsconfig.json at first. This allows TypeScript to type check JavaScript files. This is useful for gradually migrating a codebase from JavaScript to TypeScript. This gives you some type checks in your JS files, but it doesn't give you the full benefits of TypeScript. You can then gradually convert your JavaScript files to TypeScript files as you go.
 
 You can also consider Airbnb's [ts-migrate](https://github.com/airbnb/ts-migrate) project, which is a tool to quickly migrate JavaScript codebases to TypeScript. It automates the migration process by basically doing two things:
 

@@ -1,4 +1,16 @@
-Use https://react-typescript-cheatsheet.netlify.app/
+# Node and VanillaJS with TypeScript
+
+## Quick Start
+
+`bun install`
+`bun run dev`
+
+This will run the Vanilla JS frontend and the Node backend in development mode. You can view it at `http://localhost:3000`.
+
+## React TypeScript Cheat Sheet
+
+The [React TypeScript cheat sheet](https://react-typescript-cheatsheet.netlify.app/) contains the common patterns and best practices for using TypeScript with React.
+
 Creating a new React TypeScript project
 Declaring props
 tsconfig settings

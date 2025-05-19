@@ -1,15 +1,25 @@
-// Warning: fetch's error is `any` by default.
-// Consider using `unknown` instead.
-fetch("https://example.com")
-  .then((response) => {
-    if (!response.ok) throw response.text;
-    return response.json();
-  })
-  // Type as unknown to require handling safely below
-  .catch((error: unknown) => {
-    if (error instanceof Error) {
-      console.error("Fetch error:", error.message);
-    } else {
-      console.error("Unknown error", error);
-    }
-  });
+// Using custom errors?
+// Declare a custom type guard to safely narrow the error type.
+type ApiError = { code: number; message: string };
+
+// This checks if the unknown error is an ApiError
+function isApiError(error: unknown): error is ApiError {
+  return (
+    typeof error === "object" &&
+    error !== null &&
+    "code" in error &&
+    typeof (error as any).code === "number" &&
+    "message" in error &&
+    typeof (error as any).message === "string"
+  );
+}
+
+try {
+  // ...
+} catch (err: unknown) {
+  if (isApiError(err)) {
+    console.error(`API Error ${err.code}: ${err.message}`);
+  } else {
+    console.error("Unknown error", err);
+  }
+}

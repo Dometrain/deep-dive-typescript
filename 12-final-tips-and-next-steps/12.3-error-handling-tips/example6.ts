@@ -1,19 +1,20 @@
-// Consider using exhaustive checks to assure all error types are handled.
+// Consider declaring custom error classes that extend the built-in Error class
+// to provide more context and type safety.
 
-type AppError = "NotFound" | "Unauthorized" | "Timeout";
+class ValidationError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "ValidationError";
+  }
+}
 
-function handleError(err: AppError) {
-  switch (err) {
-    case "NotFound":
-      // ...
-      break;
-    case "Unauthorized":
-      // ...
-      break;
-    case "Timeout":
-      // ...
-      break;
-    default:
-      err satisfies never; // Error if a new AppError is added and not handled
+// Now can easily handle a ValidationError differently
+function handleErrors(e: unknown) {
+  if (e instanceof ValidationError) {
+    // handle specific case
+  } else if (e instanceof Error) {
+    // handle generic error
+  } else {
+    // handle unknown error
   }
 }

@@ -1,20 +1,21 @@
-// Consider declaring custom error classes that extend the built-in Error class
-// to provide more context and type safety.
+// Consider modeling error states with union types
+// Instead of throwing, consider returning a union
 
-class ValidationError extends Error {
-  constructor(message: string) {
-    super(message);
-    this.name = "ValidationError";
+type Result<T> = { ok: true; value: T } | { ok: false; error: string };
+
+function parseJSON(input: string): Result<any> {
+  try {
+    return { ok: true, value: JSON.parse(input) };
+  } catch (e) {
+    return { ok: false, error: "Invalid JSON" };
   }
 }
 
-// Now can easily handle a ValidationError differently
-function handleErrors(e: unknown) {
-  if (e instanceof ValidationError) {
-    // handle specific case
-  } else if (e instanceof Error) {
-    // handle generic error
-  } else {
-    // handle unknown error
-  }
+const result = parseJSON("invalid json");
+
+// Now we can handle the result without throwing or try/catch
+if (result.ok) {
+  console.log("Parsed value:", result.value);
+} else {
+  console.error("Error:", result.error);
 }

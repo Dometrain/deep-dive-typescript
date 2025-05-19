@@ -1,8 +1,6 @@
 # Strictest TypeScript mode
 
-There are over 100 tsconfig settings, and I'm not going to bore you describing each one. They're well documented on [TypeScript's official documentation](https://www.typescriptlang.org/docs/handbook/compiler-options.html).
-
-But I do want to share some concise recommendations. First, if you're starting a new TypeScript project, consider configuring TypeScript as strict as possible. This will help you catch potential errors early and enforce best practices. If you start loose, it's hard to tighten up later. But if you find the settings below are too strict for you team, you can loosen them up easily.
+Whether you're converting an existing project, or starting a new project, consider configuring TypeScript as strict as possible. This will help you catch potential errors early and enforce best practices. But if you find the settings below are too strict for you team, you can loosen them up easily.
 
 Let's talk through these settings.
 

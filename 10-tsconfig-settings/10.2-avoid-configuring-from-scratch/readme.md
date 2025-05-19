@@ -1,8 +1,8 @@
 ## Avoid starting from scratch
 
-These days, most frameworks have TypeScript support built in, and therefore, include a tsconfig.json file. If you're using a framework, I recommend starting with their tsconfig.json file and then modifying it to fit your needs.
+I'll start with a simple suggestion. Avoid starting your tsconfig from scratch. These days, most frameworks have TypeScript support built in, and therefore, include a tsconfig.json file, or publish recommended settings. So, if you're using a framework, I recommend starting with their tsconfig.json file and then modifying it to fit your needs.
 
-For example, Next.js, Nuxt, and Vite all include a tsconfig.json file. You can use these as a starting point and then modify them to fit your needs.
+For example, Next.js, Nuxt, and Vite all include a tsconfig.json file. Use these as a starting point and then modify them to fit your needs.
 
 ## Other Recommended tsconfig settings
 

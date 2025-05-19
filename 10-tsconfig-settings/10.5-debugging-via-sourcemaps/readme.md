@@ -3,7 +3,7 @@
 ## Quick start
 
 `tsc`
-`npx run serve`
+`npx serve`
 
 If you want to be able to debug your code in the browser or via Node debuggers, then enable sourcemaps in tsconfig.json.
 

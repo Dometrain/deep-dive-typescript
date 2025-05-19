@@ -1,7 +1,7 @@
 ## Run example
 
 ```ts
-tsc example.ts
+tsc
 bunx serve
 ```
 

@@ -1,19 +1,21 @@
-// Use exhaustive checks for known error types
+// Consider modeling error states with union types
+// Instead of throwing, consider returning a union
 
-type AppError = "NotFound" | "Unauthorized" | "Timeout";
+type Result<T> = { ok: true; value: T } | { ok: false; error: string };
 
-function handleError(err: AppError) {
-  switch (err) {
-    case "NotFound":
-      // ...
-      break;
-    case "Unauthorized":
-      // ...
-      break;
-    case "Timeout":
-      // ...
-      break;
-    default:
-      err satisfies never; // Error if a new AppError is added and not handled
+function parseJSON(input: string): Result<any> {
+  try {
+    return { ok: true, value: JSON.parse(input) };
+  } catch (e) {
+    return { ok: false, error: "Invalid JSON" };
   }
+}
+
+const result = parseJSON("invalid json");
+
+// Now we can handle the result without throwing or try/catch
+if (result.ok) {
+  console.log("Parsed value:", result.value);
+} else {
+  console.error("Error:", result.error);
 }

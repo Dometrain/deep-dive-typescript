@@ -1,27 +1,15 @@
-// Consider declaring custom error classes
-
-class ValidationError extends Error {
-  constructor(message: string) {
-    super(message);
-    this.name = "ValidationError";
-  }
-}
-
-try {
-  throw new ValidationError("Bad input");
-} catch (e: unknown) {
-  if (e instanceof ValidationError) {
-    // handle specific case
-  }
-}
-
-// Now can easily handle a ValidationError differently
-function handleErrors(e: unknown) {
-  if (e instanceof ValidationError) {
-    // handle specific case
-  } else if (e instanceof Error) {
-    // handle generic error
-  } else {
-    // handle unknown error
-  }
-}
+// Warning: fetch's error is `any` by default.
+// Consider using `unknown` instead.
+fetch("https://example.com")
+  .then((response) => {
+    if (!response.ok) throw response.text;
+    return response.json();
+  })
+  // Type as unknown to require handling safely below
+  .catch((error: unknown) => {
+    if (error instanceof Error) {
+      console.error("Fetch error:", error.message);
+    } else {
+      console.error("Unknown error", error);
+    }
+  });

@@ -1,0 +1,10 @@
+{
+  "name": "typescript-frontend",
+  "scripts": {
+    "start": "node index.ts"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {}
+}

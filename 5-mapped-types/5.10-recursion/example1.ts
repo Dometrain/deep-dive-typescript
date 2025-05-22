@@ -1,5 +1,4 @@
-// Recursion example
-// Utility type that makes all properties (including nested properties) optional
+// Recursion example - Makes all properties (including nested) optional
 
 type DeepPartial<T> = {
   [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K];

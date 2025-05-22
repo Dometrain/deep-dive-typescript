@@ -1,35 +1,23 @@
 // Type narrowing via exhaustiveness checking
-interface Circle {
-  kind: "circle";
-  radius: number;
+interface Dog {
+  kind: "dog";
+  favoriteToy: string;
 }
 
-interface Square {
-  kind: "square";
-  sideLength: number;
+interface Parrot {
+  kind: "parrot";
+  knowsWords: number;
 }
 
-interface Triangle {
-  kind: "triangle";
-  base: number;
-  height: number;
-}
+type Pet = Dog | Parrot;
 
-type Shape = Circle | Square | Triangle;
-
-function logArea(shape: Shape): void {
-  switch (shape.kind) {
-    case "circle":
-      console.log(Math.PI * shape.radius ** 2);
-      break;
-    case "square":
-      console.log(shape.sideLength ** 2);
-      break;
-    case "triangle":
-      console.log(0.5 * shape.base * shape.height);
-      break;
+function logPetTalent(pet: Pet) {
+  switch (pet.kind) {
+    case "dog":
+      return console.log(`Dog loves ${pet.favoriteToy}.`);
+    case "parrot":
+      return console.log(`Parrot knows ${pet.knowsWords} words.`);
     default:
-      const _exhaustiveCheck: never = shape; // error if we don't handle all cases
-      return _exhaustiveCheck;
+      pet satisfies never; // error if we don't handle all cases
   }
 }

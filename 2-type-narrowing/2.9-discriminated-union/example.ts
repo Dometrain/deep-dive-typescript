@@ -1,21 +1,21 @@
 // type narrowing via discriminated union
-interface Circle {
-  kind: "circle";
-  radius: number;
+interface Cat {
+  kind: "cat";
+  livesLeft: number;
 }
 
-interface Square {
-  kind: "square";
-  sideLength: number;
+interface Dog {
+  kind: "dog";
+  bonesBuried: number;
 }
 
-type Shape = Circle | Square;
+type Pet = Cat | Dog;
 
-function calculateArea(shape: Shape) {
-  switch (shape.kind) {
-    case "circle":
-      return Math.PI * shape.radius ** 2;
-    case "square":
-      return shape.sideLength ** 2;
+function describePet(pet: Pet) {
+  switch (pet.kind) {
+    case "cat":
+      return `This cat has ${pet.livesLeft} lives left.`;
+    case "dog":
+      return `This dog has buried ${pet.bonesBuried} bones.`;
   }
 }

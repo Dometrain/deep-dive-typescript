@@ -1,4 +1,5 @@
-// Why mapped types? Create a new type from an existing type with our own logic.
+// Why mapped types?
+// Create a new type from an existing type with our own logic.
 
 // Sure, I could copy/paste like this...
 type EmployeeConfig = {

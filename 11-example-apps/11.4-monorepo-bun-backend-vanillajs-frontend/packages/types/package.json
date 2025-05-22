@@ -1,8 +1,0 @@
-{
-  "name": "types",
-  "private": true,
-  "main": "index.js",
-  "dependencies": {
-    "zod": "^4.0.0-beta.20250412T085909"
-  }
-}

@@ -8,10 +8,12 @@ Some types are more specific than others.
 
 Examples:
 
-- `string` is more specific than `string | number`.
-- `User` is more specific than `object`.
-- The string literal `submitted` is more specific than `string` or the union type `"submitted" | "pending" | "rejected"`.
-- All types are more specific than `any` or `unknown`.
+| More Specific   | Less Specific                                        |
+| --------------- | ---------------------------------------------------- |
+| `string`        | `string \| number`                                   |
+| `User`          | `object`                                             |
+| `"submitted"`   | `string` or `"submitted" \| "pending" \| "rejected"` |
+| All other types | `any` or `unknown`                                   |
 
 You can think of types as sets of potential values. The more specific the type, the smaller the set of potential values.
 

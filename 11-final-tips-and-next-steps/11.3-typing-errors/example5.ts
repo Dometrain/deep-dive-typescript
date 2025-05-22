@@ -1,5 +1,5 @@
 // Using custom errors?
-// Declare a custom type guard to safely narrow the error type.
+// Declare a custom type predicate to safely narrow the error type.
 type ApiError = { code: number; message: string };
 
 // This checks if the unknown error is an ApiError
@@ -8,15 +8,15 @@ function isApiError(error: unknown): error is ApiError {
     typeof error === "object" &&
     error !== null &&
     "code" in error &&
-    typeof (error as any).code === "number" &&
+    typeof error.code === "number" &&
     "message" in error &&
-    typeof (error as any).message === "string"
+    typeof error.message === "string"
   );
 }
 
 try {
   // ...
-} catch (err: unknown) {
+} catch (err) {
   if (isApiError(err)) {
     console.error(`API Error ${err.code}: ${err.message}`);
   } else {

@@ -1,5 +1,5 @@
-// Consider declaring custom error classes that extend the built-in Error class
-// to provide more context and type safety.
+// Consider declaring custom error classes that extend the built-in
+// Error class to provide more context and type safety.
 
 class ValidationError extends Error {
   constructor(message: string) {
